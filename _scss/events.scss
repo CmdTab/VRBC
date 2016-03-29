@@ -1,0 +1,169 @@
+.single-event,
+.event-archive {
+	.entry-title {
+		background: $yellow;
+		&:before {
+			border-left: 9999px solid $yellow;
+			box-shadow: 9999px 0 0 $yellow;
+		}
+	}
+	.primary a {
+		color: $purple;
+	}
+}
+.event-meta {
+	background: #e2e4e0;
+	padding: 0.5em 1em;
+	font-size: 0.875em;
+	a {
+		color: darken($text, 20%);
+		text-decoration: underline;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		text-align: center;
+	}
+	h4 {
+		margin: 0 0 0.25em;
+	}
+}
+.side-category {
+	padding-top: 0;
+}
+.event-list-archive {
+	text-align: center;
+	h4 {
+		margin: 0 0 0.25em;
+	}
+	a {
+		color: $yellow;
+	}
+}
+.venue-header,
+.event-header {
+	margin: 0 1em 1em;
+	padding: 0 0 1em;
+	border-bottom: 0.5em solid #e2e4e0;
+}
+#nav-below {
+	padding: 1em 0;
+	.nav-next {
+		float: right;
+	}
+	.nav-previous {
+		float: left;
+	}
+	.events-nav-newer {
+		a {
+			color: $yellow;
+		}
+	}
+}
+.entry-excerpt {
+   font-size: 0.8em;
+   margin-top: 0.875em;
+   hr {
+   	width: 3em;
+   }
+   a {
+   	color: $purple;
+   	font-weight: 700;
+   }
+}
+.event-list {
+	li {
+		background: #f2f2f2;
+		padding: 1em;
+		position: relative;
+	}
+	h4 {
+		margin: 0.5em;
+	}
+}
+.single-event-container {
+	background: white;
+	.side-event-desc {
+		border-radius: 0.5em;
+		background: $yellow;
+		padding: 1em 1em 2em;
+		margin-top: 2.15em;
+		color: white;
+		margin-bottom: 0.875em;
+		h2,
+		a {
+			color: $white;
+		}
+		a {
+			padding-bottom: 0;
+		}
+		h2 {
+			margin-bottom: 0.5em;
+		}
+	}
+	.btn {
+		background: $purple;
+	}
+	.event-meta {
+		background: transparent;
+	}
+	.back {
+		font-weight: 700;
+		color: $yellow;
+		font-size: 0.9em;
+		text-align: right;
+		display: block;
+	}
+	.primary h1 {
+		display: none;
+		@include bp(44) {
+			display: block;
+		}
+	}
+}
+.event-detail-desktop {
+	display: none;
+	h1 {
+		display: none;
+	}
+	@include bp(44) {
+		display: block;
+		h1 {
+			display: block;
+		}
+	}
+}
+.event-detail-mobile {
+	display: block;
+	overflow: hidden;
+	@include bp(44) {
+		display: none;
+	}
+	.sidebar {
+		padding: 0 0.5em 0.5em;
+		@include bp(44) {
+			padding: 0 0.5em 0 0;
+		}
+	}
+	h1 {
+		padding: 0.5em;
+		margin-bottom: 0.875em;
+	}
+	h2 {
+		margin-bottom: 0;
+	}
+	.event-meta {
+		li {
+			margin: 0;
+		}
+		a {
+			padding-bottom: 0;
+		}
+	}
+	.side-event-desc {
+		margin-top: 0;
+	}
+}

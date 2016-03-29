@@ -1,0 +1,144 @@
+.service-times {
+	background: url(_i/texture.jpg);
+	padding: 1em 0;
+	text-align: center;
+	color: $off-white;
+	border: 0.35em solid $white;
+	border-radius: 0.25em;
+	font-family: "adelle",serif;
+}
+.first-time {
+	span {
+		text-transform: uppercase;
+	}
+	@include bp(44) {
+		&:after {
+			content: '|';
+			margin: 0 1em;
+		}
+	}
+
+}
+.second-time {
+	display: block;
+	span {
+		text-transform: uppercase;
+	}
+	@include bp(44) {
+		display: inline;
+	}
+}
+.carousel-top {
+	background: $white;
+	padding: 0.35em;
+	border-top-right-radius: 0.25em;
+	border-top-left-radius: 0.25em;
+	@include bp(44) {
+		.third {
+			float: right;
+		}
+	}
+}
+.important-actions {
+	a {
+		display: block;
+		background: $off-white;
+		background-image: -webkit-linear-gradient(top, $off-white, $off-white);
+		background-image:    -moz-linear-gradient(top, $off-white, $off-white);
+		background-image:     -ms-linear-gradient(top, $off-white, $off-white);
+		background-image:      -o-linear-gradient(top, $off-white, $off-white);
+		background-image:         linear-gradient(to bottom, $off-white, $off-white);
+		padding: 0.25em 0 1em;
+		margin-bottom: 0.5em;
+		border-radius: 0.25em;
+		-webkit-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+		@include bp(44) {
+			margin-bottom: 0.25em;
+		}
+		@include bp(50) {
+			margin-bottom: 1em;
+		}
+	}
+}
+.top-action {
+	font-family: "atrament-web",sans-serif;
+	font-weight: 600;
+	color: #fff;
+	padding: 0.25em 0.5em;
+	text-transform: uppercase;
+	font-size: 1.15em;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.bottom-action {
+	font-family: "adelle",serif;
+	font-size: 0.875em;
+	color: #c1b999;
+	margin: 0 0.75em;
+	background: $brown;
+	padding: 0.25em 0.5em;
+	border-bottom-left-radius: 0.25em;
+	border-bottom-right-radius: 0.25em;
+	text-transform: lowercase;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.new-action {
+	.top-action {
+		background: $teal;
+	}
+	&:hover {
+		background: $teal;
+		background-image: -webkit-linear-gradient(top, $teal, $teal 10%, $brown 10%, $brown);
+		background-image:    -moz-linear-gradient(top, $teal, $teal 10%, $brown 10%, $brown);
+		background-image:     -ms-linear-gradient(top, $teal, $teal 10%, $brown 10%, $brown);
+		background-image:      -o-linear-gradient(top, $teal, $teal 10%, $brown 10%, $brown);
+		background-image:         linear-gradient(to bottom, $teal, $teal 10%, $brown 10%, $brown);
+	}
+}
+.sermon-action {
+	.top-action {
+		background: $purple;
+	}
+	&:hover {
+		background: $purple;
+		background-image: -webkit-linear-gradient(top, $purple, $purple 10%, $brown 10%, $brown);
+		background-image:    -moz-linear-gradient(top, $purple, $purple 10%, $brown 10%, $brown);
+		background-image:     -ms-linear-gradient(top, $purple, $purple 10%, $brown 10%, $brown);
+		background-image:      -o-linear-gradient(top, $purple, $purple 10%, $brown 10%, $brown);
+		background-image:         linear-gradient(to bottom, $purple, $purple 10%, $brown 10%, $brown);
+	}
+}
+.connect-action {
+	.top-action {
+		background: $yellow;
+	}
+	&:hover {
+		background: $yellow;
+		background-image: -webkit-linear-gradient(top, $yellow, $yellow 10%, $brown 10%, $brown);
+		background-image:    -moz-linear-gradient(top, $yellow, $yellow 10%, $brown 10%, $brown);
+		background-image:     -ms-linear-gradient(top, $yellow, $yellow 10%, $brown 10%, $brown);
+		background-image:      -o-linear-gradient(top, $yellow, $yellow 10%, $brown 10%, $brown);
+		background-image:         linear-gradient(to bottom, $yellow, $yellow 10%, $brown 10%, $brown);
+	}
+}
+.give-action {
+	.top-action {
+		background: $green;
+	}
+	&:hover {
+		background: $green;
+		background-image: -webkit-linear-gradient(top, $green, $green 10%, $brown 10%, $brown);
+		background-image:    -moz-linear-gradient(top, $green, $green 10%, $brown 10%, $brown);
+		background-image:     -ms-linear-gradient(top, $green, $green 10%, $brown 10%, $brown);
+		background-image:      -o-linear-gradient(top, $green, $green 10%, $brown 10%, $brown);
+		background-image:         linear-gradient(to bottom, $green, $green 10%, $brown 10%, $brown);
+	}
+}

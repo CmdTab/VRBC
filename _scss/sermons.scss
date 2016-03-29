@@ -1,0 +1,143 @@
+.single-sermon,
+.sermon-archive {
+	.entry-title {
+		background: $purple;
+		&:before {
+			border-left: 9999px solid $purple;
+			box-shadow: 9999px 0 0 $purple;
+		}
+	}
+	&.primary a,
+	.primary a {
+		color: $purple;
+	}
+}
+.sermon-meta {
+	background: #e2e4e0;
+	padding: 0.5em 1em;
+	font-size: 0.875em;
+	text-align: center;
+	a {
+		color: darken($text, 20%);
+		text-decoration: underline;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		text-align: center;
+	}
+	h4 {
+		margin: 0 0 0.25em;
+	}
+}
+.sermon-archive {
+	margin-bottom: 2em;
+	width: 100%;
+	padding: 0 1em 0 2em;
+	@include bp(50) {
+		width: 35%;
+	}
+}
+.sermon-link {
+	a {
+		color: $heading;
+	}
+}
+.series-list {
+	text-align: center;
+	a {
+		color: $text;
+		font-weight: bold;
+	}
+}
+.teacher-info {
+	//background: #efefef;
+	margin: 1em;
+	padding: 1em 0;
+	border-bottom: 0.5em solid #e2e4e0;
+}
+.sermon-page {
+	background: white;
+	padding: 0.5em 0;
+	.entry-title {
+		overflow: hidden;
+		padding: 0.25em 0.5em;
+		background: $purple;
+	}
+}
+.sermon-content {
+	width: 100%;
+	.sermon-archive {
+		background: $white;
+		padding: 0.5em 1em;
+		width: 100%;
+		border-radius: 0.25em;
+		margin: 0 auto 1em;
+	}
+	.entry-content {
+		display: none;
+	}
+	.sermon-audio {
+		display: none;
+		padding: 1em 0;
+	}
+	.sermon-video {
+		display: none;
+		padding: 1em 0;
+		iframe {
+			border-radius: 0.25em;
+		}
+	}
+	.worship-playlist {
+		display: none;
+		padding: 1em 0;
+	}
+	@include bp(50) {
+		width: 63%;
+		margin-left: 2%;
+		.sermon-archive {
+			width: 95%;
+			padding: 0.5em 1.25em;
+		}
+	}
+}
+.sermon-info {
+	padding: 0.5em 0;
+	p {
+		margin: 0;
+		margin-bottom: 0.5em;
+	}	
+	a {
+		color: $text;
+		&:hover {
+			color: $teal;
+		}
+	}
+}
+.btn-links {
+	margin: 1em auto 1.15em;
+	a {
+		color: #fff;
+		background: $purple;
+		font-weight: 800;
+		text-transform: lowercase;
+		margin-right: 0.5em;
+		&:hover {
+			background: darken($purple, 10%);
+			color: #fff;
+		}
+	}
+}
+.sermon-btn {
+	padding: 0.75em 1em;
+	width: 6em;
+	font-size: 0.85em;
+	border-radius: 0.25em;
+}
+.speaker-info {
+	width: 100%;
+	margin: 0 auto;
+}

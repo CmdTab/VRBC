@@ -1,0 +1,175 @@
+
+    body {
+      font-size: 1em; }
+
+    .site-wrapper {
+      padding: 0; }
+
+    .half {
+      float: left;
+      width: 47.5%;
+      margin-bottom: 0; }
+      .half.first {
+        margin-right: 5%; }
+
+  .two-third {
+    float: left;
+    width: 68%; }
+    .two-third.first {
+      margin-right: 2%; }
+
+  .third {
+    float: left;
+    width: 30%; }
+    .third.first {
+      margin-right: 2%; }
+
+
+    .three-list > li {
+      float: left;
+      width: 30%;
+      margin: 0 5% 2em 0; }
+      .three-list > li:last-child, .three-list > li:nth-child(3n) {
+        margin: 0 0 2em; }
+      .three-list > li:nth-child(3n+4) {
+        clear: left; }
+
+    .two-list > li {
+      float: left;
+      width: 47.5%;
+      margin: 0 5% 1em 0; }
+      .two-list > li:last-child, .two-list > li:nth-child(even) {
+        margin: 0 0 1em; }
+
+    .site-header {
+      position: relative;
+      padding: 2em 0 1em; }
+
+    .cloud {
+      display: block; }
+
+
+    .site-branding {
+      float: left;
+      width: 36%;
+      max-width: 100%; }
+
+    .contact-info {
+      position: static;
+      background: none;
+      float: right;
+      width: 64%;
+      color: #4c462d;
+      margin-bottom: 0; }
+
+    .social-icons a {
+      padding-right: 0.5em; }
+
+    .toggle-nav {
+      display: none; }
+
+    .main-navigation {
+      position: static;
+      top: auto;
+      float: right;
+      width: 64%;
+      background: none; }
+
+    .main-nav-list {
+      float: right;
+      background: url(_i/back.jpg);
+      background-size: 100px;
+      padding: 0.5em 0.25em; }
+      .main-nav-list > li {
+        display: inline-block;
+        border: 0; }
+        .main-nav-list > li:last-child .sub-menu {
+          left: auto;
+          right: -0.3em; }
+      .main-nav-list a {
+        padding: 0 1em; }
+
+    .sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 9em;
+      background: url(_i/back.jpg);
+      background-size: 100px;
+      padding: 1em 0.5em; }
+      .sub-menu li {
+        padding: 0;
+        border-bottom: 1px solid #fff; }
+      .sub-menu a {
+        padding: 0.25em 0; }
+
+    .expand {
+      background: none; }
+
+    .menu-item-has-children > a:after {
+      font-size: 0.5em;
+      right: 0; }
+
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px; }
+
+  .carousel-indicators {
+    bottom: 20px; }
+
+  .first-time:after {
+    content: '|';
+    margin: 0 1em; }
+
+    .second-time {
+      display: inline; }
+
+    .carousel-top .third {
+      float: right; }
+
+    .home-thirds-titles {
+      display: block; }
+      .home-thirds-titles .events-third {
+        display: none; }
+    .home-thirds-titles .events-third {
+      display: block; }
+
+    .home-thirds-content {
+      background-image: -webkit-linear-gradient(left, #e2e4e0, #e2e4e0 70%, #467a7f 70%, #467a7f);
+      background-image: -moz-linear-gradient(left, #e2e4e0, #e2e4e0 70%, #467a7f 70%, #467a7f);
+      background-image: -ms-linear-gradient(left, #e2e4e0, #e2e4e0 70%, #467a7f 70%, #467a7f);
+      background-image: -o-linear-gradient(left, #e2e4e0, #e2e4e0 70%, #467a7f 70%, #467a7f);
+      background-image: linear-gradient(to right, #e2e4e0, #e2e4e0 70%, #467a7f 70%, #467a7f); }
+      .home-thirds-content .sermons-third:before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 80%;
+        background: #fff;
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        left: 0; }
+
+  .about-third {
+    float: left;
+    width: 60%; }
+  .about-third {
+    width: 40%; }
+
+  .sermons-third {
+    float: left;
+    width: 40%; }
+  .sermons-third {
+    width: 30%; }
+
+    .events-third {
+      float: left;
+      width: 30%;
+      clear: none; }

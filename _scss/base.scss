@@ -1,0 +1,111 @@
+/*!
+	Theme Name: VRBC
+	Theme URI: http://vrbc.net/
+	Author: Cmd Tab
+	Author URI: http://cmdtab.co/
+	Description: Description
+	Version: 1.0
+	License: GNU General Public License
+	License URI: license.txt
+	Text Domain: homeword
+	Domain Path: /languages/
+*/
+@import "normalize";
+@import "bits";
+@import "var";
+
+html,body {
+	overflow-x:hidden;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	color: $text;
+	font:
+		0.875em/1.5
+		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	/*background-color: $back-bottom;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($back-top), to($back-bottom));
+	background-image: -webkit-linear-gradient(top, $back-top, $back-bottom);
+	background-image:    -moz-linear-gradient(top, $back-top, $back-bottom);
+	background-image:      -o-linear-gradient(top, $back-top, $back-bottom);
+	background-image:   linear-gradient(to bottom, $back-top, $back-bottom);*/
+	background: url(_i/background.jpg);
+	background-size: 500px;
+	@include bp(44) {
+		font-size: 1em;
+	}
+}
+@font-face {
+	font-family: 'vrbc';
+	src:url('_fonts/vrbc.eot?21fhvx');
+	src:url('_fonts/vrbc.eot?#iefix21fhvx') format('embedded-opentype'),
+		url('_fonts/vrbc.woff?21fhvx') format('woff'),
+		url('_fonts/vrbc.ttf?21fhvx') format('truetype'),
+		url('_fonts/vrbc.svg?21fhvx#vrbc') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'vrbc';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angle-left:before {
+	content: "\e600";
+}
+.icon-angle-right:before {
+	content: "\e603";
+}
+.icon-star-o:before {
+    content: "\f006";
+}
+.icon-clock-o:before {
+    content: "\f017";
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+a {
+	color: blue;
+	text-decoration: none;
+	&:hover {
+		color: darken(blue, 10%);
+	}
+}
+.btn {
+}
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 1;
+}
+
+
+@import "modules";
+@import "header";
+@import "carousel";
+@import "home";
+@import "search";
+@import "home-thirds";
+@import "full-width";
+@import "footer";
+@import "content";
+@import "sidebar";
+@import "taxonomy";
+@import "events";
+@import "sermons";
+@import "subnav";
+@import "blog";

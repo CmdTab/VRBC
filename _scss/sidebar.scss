@@ -1,0 +1,123 @@
+.sidebar {
+	padding: 0 0.5em 0 0;
+	h2 {
+		font-family: "adelle",serif;
+		color: #fff;
+		font-weight: normal;
+		text-transform: lowercase;
+		margin-top: 0.5em;
+		&:before {
+			content: '\e605';
+			margin-right: 0.5em;
+			font-family: 'vrbc';
+			font-size: 0.5em;
+		}
+	}
+	.date-month {
+		font-size: 0.75em;
+	}
+}
+.widget {
+	margin-bottom: 2em;
+}
+.side-sermon {
+	position: relative;
+	.all-sermons {
+		position: relative;
+		top: auto;
+		left: auto;
+		bottom: auto;
+		right: auto;
+		margin-top: 1em;
+	}
+	h2 {
+		&:before {
+			color: $purple;
+		}
+	}
+	h3 {
+		font-size: 1.3em;
+		font-weight: normal;
+		color: $purple;
+		text-transform: lowercase;
+		font-family: "adelle",serif;
+	}
+	h4 {
+		font-size: 1.1em;
+		color: $purple;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 0.875em;
+	}
+	p {
+		display: none;
+	}
+}
+.side-events {
+	h2 {
+		&:before {
+			color: $yellow;
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: block;
+		margin-bottom: 1em;
+	}
+	.event-details {
+		p {
+			font-size: 0.875em;
+		}
+	}
+}
+.side-event-list {
+	position: relative;
+	background: $yellow;
+	padding: 0.5em 0.5em 3em;
+}
+.side-event-desc {
+	.event-meta {
+		background: white;
+		ul {
+			li {
+				text-align: left;
+			}
+		}
+	}
+	.half {
+		float: none;
+		width: 100%;
+		h4 {
+			color: darken($purple,15%);
+			text-transform: uppercase;
+			padding: 0.5em 0 0;
+			text-align: left;
+		}
+		> a {
+			text-align: left;
+			display: block;
+			padding-bottom: 1em;
+		}
+	}
+	.eo-upcoming-dates-pipe {
+		display: none !important;
+	}
+}
+.side-category {
+	color: darken($purple,15%);
+	font-weight: 700;
+	text-transform: uppercase;
+   a {
+		display: inline-block;
+		text-transform: none;
+		font-weight: normal;
+   }
+}

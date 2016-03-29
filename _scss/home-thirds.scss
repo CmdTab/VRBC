@@ -1,0 +1,281 @@
+.third-section {
+	position: relative;
+}
+.home-thirds {
+	font-size: 0.875em;
+	background: url(_i/back.jpg);
+	background-size: 100px;
+	border-radius: 0.25em;
+	border: 0.25em solid $white;
+	padding: 1em;
+	&:before {
+		content: '';
+		position: absolute;
+		left: -6em;
+		top: 10%;
+		z-index: -1;
+		display: block;
+		width: 6em;
+		height: 25em;
+		background: url('_i/left-flourish.png');
+		background-size: 100%;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		right: -6em;
+		top: 10%;
+		z-index: -1;
+		display: block;
+		width: 6em;
+		height: 25em;
+		background: url('_i/right-flourish.png');
+		background-size: 100%;
+	}
+	h2 {
+		text-transform: lowercase;
+	}
+}
+.home-thirds-titles {
+	display: none;
+	padding: 0;
+	h2 {
+		font-family: "adelle",serif;
+		color: #fff;
+		font-weight: normal;
+		position: relative;
+		padding-left: 0.75em;
+		&:before {
+			/*content: '\e605';
+			margin-right: 0.5em;
+			font-family: 'vrbc';
+			font-size: 0.5em;*/
+			content: '';
+			display: block;
+			height: 0.25em;
+			width: 0.5em;
+			position: absolute;
+			top: 0.5em;
+			left: 0;
+		}
+	}
+	.about-third {
+		h2 {
+			&:before {
+				background: $teal;
+			}
+		}
+	}
+	.sermons-third {
+		h2 {
+			&:before {
+				background: $purple;
+			}
+		}
+	}
+	.events-third {
+		h2 {
+			&:before {
+				background: $yellow;
+			}
+		}
+	}
+	@include bp(44) {
+		display: block;
+		.events-third {
+			display: none;
+		}
+	}
+	@include bp(50) {
+		.events-third {
+			display: block;
+		}
+	}
+}
+.home-thirds-content {
+	position: relative;
+	background: #e2e4e0;
+	.events-third {
+		background: $yellow;
+	}
+	@include bp(50) {
+		background-image: -webkit-linear-gradient(left, #e2e4e0, #e2e4e0 70%, $yellow 70%, $yellow);
+		background-image:    -moz-linear-gradient(left, #e2e4e0, #e2e4e0 70%, $yellow 70%, $yellow);
+		background-image:     -ms-linear-gradient(left, #e2e4e0, #e2e4e0 70%, $yellow 70%, $yellow);
+		background-image:      -o-linear-gradient(left, #e2e4e0, #e2e4e0 70%, $yellow 70%, $yellow);
+		background-image:         linear-gradient(to right, #e2e4e0, #e2e4e0 70%, $yellow 70%, $yellow);
+		.sermons-third {
+			&:before {
+				content:'';
+				display: block;
+				width: 2px;
+				height: 80%;
+				background: #fff;
+				position: absolute;
+				top: 10%;
+				bottom: 10%;
+				left: 0;
+			}
+		}
+	}
+}
+.home-third {
+	padding: 1em 1em 3em;
+}
+.about-third {
+	a:last-of-type {
+		position: absolute;
+		bottom: 1em;
+		left: 1em;
+		right: 1em;
+		margin-bottom: 0;
+	}
+	.btn {
+		margin-bottom: 2em;
+
+		&:before {
+			color: $teal;
+		}
+	}
+	p {
+		font-size: 0.9375em;
+		line-height: 1.2;
+	}
+	@include bp(44) {
+		float: left;
+		width: 60%;
+	}
+	@include bp(50) {
+
+		width: 40%;
+	}
+}
+.sermons-third {
+	h3 {
+		font-size: 1.3em;
+		font-weight: normal;
+		color: $purple;
+		text-transform: lowercase;
+		font-family: "adelle",serif;
+	}
+	h4 {
+		color: $purple;
+		text-transform: uppercase;
+		margin: 0.25em 0 0;
+	}
+	a {
+		display: block;
+		color: $text;
+		text-decoration: none;
+		span {
+			font-size: 0.9375em;
+		}
+	}
+	p {
+		margin-top: 0.25em;
+		font-size: 0.9375em;
+		line-height: 1.2;
+	}
+	@include bp(44) {
+		float: left;
+		width: 40%;
+	}
+	@include bp(50) {
+		width: 30%;
+
+	}
+}
+.all-sermons {
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
+	right: 1em;
+	color: #fff !important;
+	&:before {
+		color: $purple;
+	}
+}
+.events-third {
+	clear: both;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: block;
+		margin-bottom: 2em;
+	}
+	@include bp(50) {
+		float: left;
+		width: 30%;
+		clear: none;
+	}
+}
+.all-events {
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
+	right: 1em;
+	background: #333;
+	background: rgba(0,0,0,0.2);
+	&:hover {
+		background: #222;
+		background: rgba(0,0,0,0.5);
+	}
+	&:before {
+		color: $yellow;
+	}
+}
+.date-box {
+	border-radius: 0.25em;
+	background: #f4f6f7;
+	text-align: center;
+	line-height: 1;
+	font-family: "adelle",serif;
+	float: left;
+	width: 15%;
+	margin-right: 5%;
+	-webkit-box-shadow: 0px 0px 4px 0px #333;
+          box-shadow: 0px 0px 4px 0px #333;
+	* {
+		line-height: 1;
+	}
+}
+.date-day {
+	color: #c1b999;
+	font-size: 1.75em;
+}
+.date-month {
+	background: #e0e9e9;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.8125em;
+	color: #6b6959;
+	padding: 0.25em 0.5em;
+	border-bottom-left-radius: 0.25em;
+	border-bottom-right-radius: 0.25em;
+}
+.event-details {
+	float: left;
+	width: 80%;
+	a {
+		color: #fff;
+	}
+	h3 {
+		font-size: 1.25em;
+		margin: 0 0 0.25em;
+		font-family: "adelle",serif;
+	}
+	p {
+		margin: 0;
+		font-size: 0.875em;
+		line-height: 1.2;
+		color: #d1d1cd;
+	}
+}
+.event-more {
+	font-size: 0.75em;
+	font-weight: bold;
+	text-transform: uppercase;
+}

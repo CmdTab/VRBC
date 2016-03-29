@@ -1,0 +1,55 @@
+.primary {
+	a {
+		color: $green;
+	}
+	h1, h2, h3, h4 {
+		color: $heading;
+	}
+	h2, h3, h4 {
+		text-transform: uppercase;
+	}
+}
+.entry-title {
+	font-family: "adelle",serif;
+	background: $green;
+	color: #fff !important;
+	padding: 0.25em 0;
+	text-transform: lowercase;
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -9999px;
+		right: 0;
+		border-left: 9999px solid $green;
+		box-shadow: 9999px 0 0 $green;
+	}
+	&.speaker-archive {
+		background: $purple;
+		&:before {
+			border-left: 9999px solid $purple;
+			box-shadow: 9999px 0 0 $purple;
+		}
+	}
+}
+.staff-list {
+	li {
+		text-align: center;
+		list-style: none;
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+	h4 {
+		margin-bottom: 0;
+	}
+	em {
+		display: block;
+	}
+}
+.staff-title {
+	display: block;
+}
