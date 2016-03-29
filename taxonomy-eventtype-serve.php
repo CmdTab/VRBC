@@ -69,7 +69,7 @@ get_header(); ?>
 				</ul>
 				<div class="serve-type">
 					<p class="explore-serve">
-						<?php include('svg/icon-explore.php'); ?>
+						<?php //include('svg/icon-explore.php'); ?>
 
 						<?php 
 							$queried_object = get_queried_object(); 
@@ -84,12 +84,12 @@ get_header(); ?>
 							$explore_icon = get_field('explore_serve_icon', $taxonomy . '_' . $term_id);
 						?>
 
-						<!-- <img src="<?php //echo $explore_icon['url']; ?>" alt="..." /> -->
+						<img src="<?php echo $explore_icon['url']; ?>" alt="..." />
 						<?php echo $explore; ?>
 
 					</p>
 					<p class="serve-team">
-						<?php include('svg/icon-team.php'); ?>
+						<?php //include('svg/icon-team.php'); ?>
 
 						<?php 
 							$queried_object = get_queried_object(); 
@@ -104,7 +104,7 @@ get_header(); ?>
 							$team_icon = get_field('serve_team_icon', $taxonomy . '_' . $term_id);
 						?>
 
-						<!-- <img src="<?php //echo $team_icon['url']; ?>" alt="..." /> -->
+						<img src="<?php echo $team_icon['url']; ?>" alt="..." />
 						<?php echo $team; ?>
 
 					</p>
@@ -191,7 +191,7 @@ get_header(); ?>
 							<?php if ( has_term( 'serve-team', 'eventtype', $post )) { ?>
 							   <p class="serve-team">
 
-								   <?php include('svg/icon-team.php'); ?>
+								   <?php //include('svg/icon-team.php'); ?>
 
 								   <?php 
 										$queried_object = get_queried_object(); 
@@ -206,13 +206,13 @@ get_header(); ?>
 										$team_icon = get_field('serve_team_icon', $taxonomy . '_' . $term_id);
 									?>
 
-									<!-- <img src="<?php //echo $team_icon['url']; ?>" alt="..." /> -->
+									<img src="<?php echo $team_icon['url']; ?>" alt="..." />
 
 								</p>
 							<?php } elseif ( has_term( 'explore-serve', 'eventtype', $post )) { ?>
 							   <p class="explore-serve">
 
-							   	<?php include('svg/icon-explore.php'); ?>
+							   	<?php //include('svg/icon-explore.php'); ?>
 
 							   	<?php 
 										$queried_object = get_queried_object(); 
@@ -227,7 +227,7 @@ get_header(); ?>
 										$explore_icon = get_field('explore_serve_icon', $taxonomy . '_' . $term_id);
 									?>
 
-									<!-- <img src="<?php //echo $explore_icon['url']; ?>" alt="..." /> -->
+									<img src="<?php echo $explore_icon['url']; ?>" alt="..." />
 
 								</p>
 							<?php } ?>

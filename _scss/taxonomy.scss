@@ -89,25 +89,19 @@
 				display: block;
 			}
 		}
-		.icon {
-			vertical-align: middle;
-			font-size: 1.5em;
-			margin-right: 0.25em;
-			margin-top: -0.15em;
-		}
 		.explore-serve{
 			font-weight: 700;
 			color: $teal;
-			.icon {
-				color: $teal;
-			}
 		}
 		.serve-team {
 			font-weight: 700;
 			color: darken($purple,15%);
-			.icon {
-				color: darken($purple,15%);
-			}
+		}
+		img {
+			max-width: 1.5em;
+			vertical-align: middle;
+			margin-right: 0.25em;
+		   margin-top: -0.25em;
 		}
 	}
 	.event-list {
@@ -120,8 +114,9 @@
 			bottom: 0.25em;
 			left: 0.75em;
 			padding: 0 !important;
-			.icon {
-				font-size: 2.5em;
+			img {
+				display: block;
+				max-width: 2.5em;
 			}
 		}
 	}
