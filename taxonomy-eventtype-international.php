@@ -23,7 +23,22 @@ get_header(); ?>
 		<div class="page-container group taxonomy-container">
 
 			<div class="serve-banner">
-				<img src="<?php bloginfo('template_directory'); ?>/_i/banner-2.jpg" />
+				<?php
+
+					// vars
+					$queried_object = get_queried_object(); 
+					$taxonomy = $queried_object->taxonomy;
+					$term_id = $queried_object->term_id;  
+
+					// load thumbnail for this taxonomy term (term object)
+					$thumbnail = get_field('banner_header', $queried_object);
+
+					// load thumbnail for this taxonomy term (term string)
+					$thumbnail = get_field('banner_header', $taxonomy . '_' . $term_id);
+
+				?>
+
+				<img src="<?php echo $thumbnail['url']; ?>" alt="..." />
 				
 				<h1 class="entry-title">
 					<?php
