@@ -11,6 +11,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_ACF\/acf-export-2016-03-30.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_ACF\/acf-export-2016-03-30.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/_ACF\/acf-export-2016-03-30-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/_i\/arrows.png": {
 		"fileType": 32768,
 		"ignore": 0,
