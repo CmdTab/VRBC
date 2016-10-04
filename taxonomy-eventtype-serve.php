@@ -207,25 +207,43 @@ get_header(); ?>
 									?>
 
 									<img src="<?php echo $team_icon['url']; ?>" alt="..." />
+									<?php if ( has_term( 'explore-serve', 'eventtype', $post )) : ?>
 
+									   	<?php 
+											$queried_object = get_queried_object(); 
+											$taxonomy = $queried_object->taxonomy;
+											$term_id = $queried_object->term_id;
+											// load thumbnail for this taxonomy term (term object)
+											$explore = get_field('explore_serve_label', $queried_object);
+											$explore_icon = get_field('explore_serve_icon', $queried_object);
+
+											// load thumbnail for this taxonomy term (term string)
+											$explore = get_field('explore_serve_label', $taxonomy . '_' . $term_id);
+											$explore_icon = get_field('explore_serve_icon', $taxonomy . '_' . $term_id);
+										?>
+
+										<img src="<?php echo $explore_icon['url']; ?>" alt="..." />
+
+									<?php endif; ?>
 								</p>
+
 							<?php } elseif ( has_term( 'explore-serve', 'eventtype', $post )) { ?>
 							   <p class="explore-serve">
 
 							   	<?php //include('svg/icon-explore.php'); ?>
 
 							   	<?php 
-										$queried_object = get_queried_object(); 
-										$taxonomy = $queried_object->taxonomy;
-										$term_id = $queried_object->term_id;
-										// load thumbnail for this taxonomy term (term object)
-										$explore = get_field('explore_serve_label', $queried_object);
-										$explore_icon = get_field('explore_serve_icon', $queried_object);
+									$queried_object = get_queried_object(); 
+									$taxonomy = $queried_object->taxonomy;
+									$term_id = $queried_object->term_id;
+									// load thumbnail for this taxonomy term (term object)
+									$explore = get_field('explore_serve_label', $queried_object);
+									$explore_icon = get_field('explore_serve_icon', $queried_object);
 
-										// load thumbnail for this taxonomy term (term string)
-										$explore = get_field('explore_serve_label', $taxonomy . '_' . $term_id);
-										$explore_icon = get_field('explore_serve_icon', $taxonomy . '_' . $term_id);
-									?>
+									// load thumbnail for this taxonomy term (term string)
+									$explore = get_field('explore_serve_label', $taxonomy . '_' . $term_id);
+									$explore_icon = get_field('explore_serve_icon', $taxonomy . '_' . $term_id);
+								?>
 
 									<img src="<?php echo $explore_icon['url']; ?>" alt="..." />
 

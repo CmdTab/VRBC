@@ -29,19 +29,25 @@ get_header(); ?>
 
 <div class="page-container group">
 	<div class="single-event-container group">
-
-		<div class="event-detail-mobile">
+		<div class="event-detail-mobile group">
+			<?php
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail();
+				} else {
+					echo '<img src="http://placehold.it/500x500 />';
+				}
+			?>
 			<header class="entry-header">
 
 				<!-- Display event title -->
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 
 			</header><!-- .entry-header -->
-			<?php get_sidebar('events'); ?>
+			<?php get_sidebar('details-mobile'); ?>
 		</div>
 
 		<div id="primary" class="primary two-third first">
-		<?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -92,10 +98,10 @@ get_header(); ?>
 				<?php //comments_template(); ?>
 			</div>-->
 
-		<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop. ?>
 		</div><!-- #primary -->
 
-		<div class="event-detail-desktop">
+		<div class="event-detail-desktop group">
 			<?php get_sidebar('details'); ?>
 		</div>
 	</div>

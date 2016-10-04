@@ -18,6 +18,7 @@
       type="image/png"
       href="<?php bloginfo('template_directory'); ?>/_i/favicon.png">
 <link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_i/vrbc_logo_icon.png">
+
 <?php wp_head(); ?>
 <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/ie.css" />

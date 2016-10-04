@@ -152,17 +152,17 @@ get_header(); ?>
 					
 						<div class="serve-type">
 							<?php if ( has_term( 'serve-team', 'eventtype', $post )) { ?>
-							   <p class="serve-team">
-								   <?php 
-										include('svg/icon-team.php');
-									?>
+
+							   	<p class="serve-team">
+									<?php include('svg/icon-team.php'); ?>
 								</p>
+								
 							<?php } elseif ( has_term( 'explore-serve', 'eventtype', $post )) { ?>
-							   <p class="explore-serve">
-							   	<?php 
-										include('svg/icon-explore.php');
-									?>
+
+							   	<p class="explore-serve">
+							   		<?php include('svg/icon-explore.php'); ?>
 								</p>
+								
 							<?php } ?>
 						</div>
 

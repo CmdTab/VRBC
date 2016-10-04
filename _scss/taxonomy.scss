@@ -97,11 +97,15 @@
 			font-weight: 700;
 			color: darken($purple,15%);
 		}
-		img {
+		img,
+		.icon {
 			max-width: 1.5em;
 			vertical-align: middle;
 			margin-right: 0.25em;
-		   margin-top: -0.25em;
+		   	margin-top: -0.25em;
+		}
+		.icon {
+			font-size: 1.5em;
 		}
 	}
 	.event-list {
@@ -115,7 +119,7 @@
 			left: 0.75em;
 			padding: 0 !important;
 			img {
-				display: block;
+				display: inline-block;
 				max-width: 2.5em;
 			}
 		}

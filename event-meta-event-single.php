@@ -24,7 +24,7 @@
  */
 ?>
 
-<div class="entry-meta event-meta">
+<!-- <div class="entry-meta event-meta"> -->
 	<!-- Choose a different date format depending on whether we want to include time -->
 	<?php if( eo_is_all_day() ){
 		$date_format = 'F j, Y';
@@ -48,11 +48,11 @@
 			<?php endif; ?>
 		<?php endif; ?>
 
-	<ul class="eo-event-meta group">
+	<!-- <ul class="eo-event-meta group"> -->
 
 		<?php if( !eo_reoccurs() ){ ?>
 				<!-- Single event -->
-				<li class="half first"><h4><?php _e('When', 'eventorganiser') ;?></h4> <?php eo_the_start($date_format); ?> </li>
+				<!-- <li class="half first"> --><li><strong><?php _e('When:', 'eventorganiser') ;?></strong> <?php eo_the_start($date_format); ?> </li>
 				<?php
 		 } ?>
 		<?php if( eo_reoccurs() ){
@@ -67,8 +67,8 @@
 
 				if( $upcoming->have_posts() ): ?>
 
-					<li class="half first"><h4><?php _e('Upcoming Dates','eventorganiser'); ?></h4>
-						<ul id="eo-upcoming-dates">
+					<!-- <li class="half first"> --> <li><strong><?php _e('Upcoming Dates:','eventorganiser'); ?></strong>
+						<ul id="eo-upcoming-dates" class="eo-upcoming-dates">
 							<?php while( $upcoming->have_posts() ): $upcoming->the_post(); ?>
 									<li> <?php eo_the_start($date_format) ?></li>
 							<?php endwhile; ?>
@@ -84,10 +84,10 @@
 		<?php } ?>
 
 		<?php if( eo_get_venue() ){ ?>
-			<li class="half"><h4><?php _e('Where','eventorganiser'); ?></h4> <a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></li>
+			<!-- <li class="half"> --> <li><strong><?php _e('Where:','eventorganiser'); ?></strong> <a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></li>
 		<?php } ?>
 
-	</ul>
+	<!-- </ul> -->
 
 	<!-- Does the event have a venue? -->
 
@@ -95,4 +95,4 @@
 
 
 
-</div><!-- .entry-meta -->
+<!--</div> .entry-meta -->

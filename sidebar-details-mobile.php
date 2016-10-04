@@ -27,7 +27,7 @@
 
 							?>
 
-							<strong><?php echo $label; ?> </strong>
+							<strong><?php echo $label; ?></strong>
 							<?php echo $info; ?>
 
 
@@ -37,7 +37,7 @@
 
 				        	?>
 
-				        		<strong><?php echo $repeat_label; ?> </strong>
+				        		<strong><?php echo $repeat_label; ?></strong>
 
 				        		<?php if( have_rows('repeater_info') ): ?>
 								<?php while ( have_rows('repeater_info') ) : the_row();
@@ -181,6 +181,6 @@
 				</aside> -->
 
 			<!-- <?php //endif; // end sidebar widget area ?>
-		</div><!-- #secondary
-	</div> -->
+		</div><!-- #secondary -->
+	<!--</div> -->
 </div>
