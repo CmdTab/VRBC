@@ -69,6 +69,24 @@ function matchHeight () {
 	jQuery('.event-list li').matchHeight();
 }
 
+function serviceToggle () {
+	jQuery( '.service-cat .btn' ).click(function() {
+		jQuery(this).parent('.service-cat').toggleClass('show');
+		return false;
+	});
+}
+
+function serviceContact () {
+	jQuery( '.contact-form-trigger' ).click(function() {
+		jQuery('.contact-form-container').toggleClass('show');
+		return false;
+	});
+	jQuery( '.serve-contact-form .icon-close' ).click(function() {
+		jQuery('.contact-form-container').removeClass('show');
+		return false;
+	});
+}
+
 jQuery(document).ready(function() {
 	jQuery('.carousel').carousel();
 	dropDown();
@@ -78,6 +96,8 @@ jQuery(document).ready(function() {
 	videoToggle();
 	worshipToggle();
 	matchHeight();
+	serviceToggle();
+	serviceContact();
 	jQuery(".sermon-video").fitVids();
 });
 

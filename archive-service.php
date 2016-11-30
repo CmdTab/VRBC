@@ -24,25 +24,81 @@ get_header(); ?>
 <!-- This template follows the TwentyTwelve theme-->
 <div class="page-container group">
 		<div id="primary" class="primary event-archive">
-			<h1>HELLO</h1>
+
 		<!-- Page header-->
 		<header class="page-header">
 		<h1 class="entry-title">
 			<?php
 				if( eo_is_event_archive('day') )
 					//Viewing date archive
-					echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('jS F Y');
+					echo __('Service Opportunities: ','eventorganiser').' '.eo_get_event_archive_date('jS F Y');
 				elseif( eo_is_event_archive('month') )
 					//Viewing month archive
-					echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('F Y');
+					echo __('Service Opportunities: ','eventorganiser').' '.eo_get_event_archive_date('F Y');
 				elseif( eo_is_event_archive('year') )
 					//Viewing year archive
-					echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('Y');
+					echo __('Service Opportunities: ','eventorganiser').' '.eo_get_event_archive_date('Y');
 				else
-					_e('Events','eventorganiser');
+					_e('Service Opportunities','eventorganiser');
 			?>
 			</h1>
 		</header>
+
+		<div class="service-nav">
+			<div class="service-cat">
+				<a href="#" class="btn">
+					Browse by Type
+					<?php include('svg/icon-down.php'); ?>
+					<?php include('svg/icon-up.php'); ?>
+				</a>
+				<ul>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/explore">
+							<img src="<?php the_field('explore_icon' , 'option'); ?>" /> Explore
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/family">
+							<img src="<?php the_field( 'family_icon' , 'option'); ?>" /> Family
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/grow">
+							<img src="<?php the_field('grow_icon' , 'option'); ?>" /> Grow
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/serve">
+							<img src="<?php the_field('serve_icon' , 'option'); ?>" /> Serve
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="service-cat">
+				<a href="#" class="btn">
+					Browse by Location
+					<?php include('svg/icon-down.php'); ?>
+					<?php include('svg/icon-up.php'); ?>
+				</a>
+				<ul>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/on-campus">
+							<img src="<?php the_field('on_campus_icon' , 'option'); ?>" /> On Campus
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/local">
+							<img src="<?php the_field('local_icon' , 'option'); ?>" /> Local
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/international">
+							<img src="<?php the_field('international_icon' , 'option'); ?>" /> International 
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -51,9 +107,9 @@ get_header(); ?>
 
 
 			<?php /* Start the Loop */?>
-			<div class="recurring-events">
+			<!-- <div class="recurring-events">
 				<p style="text-align: right; padding-bottom: 0.5em; font-size: 0.75em;"><span style="font-size: 1em; color: #dda427;" class="icon-clock-o"></span> Multiple Dates</p>
-			</div>
+			</div> -->
 			<ul class="three-list group event-list">
 			<?php while ( have_posts() ) : the_post(); ?>
 			<li id="post-<?php the_ID(); ?>" <?php post_class('event-list-archive'); ?>>

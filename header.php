@@ -29,8 +29,17 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site-wrapper">
 
+<div class="contact-form-container">
+	<div class="serve-contact-form">
+		<?php include('svg/icon-close.php'); ?>
+		<h2><?php echo the_title(); ?></h2>
+		<p>If you would like to committ to serving with us, please contact us below:</p>
+		<?php gravity_form( 1, false, false, false, '', true ); ?>
+	</div>
+</div>
+
+<div id="page" class="hfeed site-wrapper">
 	<header id="masthead" class="site-header group" role="banner">
 		<img src ="<?php bloginfo('template_directory'); ?>/_i/cloud.png" class="cloud">
 		<div class="site-branding">

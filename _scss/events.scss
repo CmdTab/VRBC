@@ -83,6 +83,9 @@
 	h4 {
 		margin: 0.5em;
 	}
+	img {
+		margin-bottom: 0.5em;
+	}
 }
 .single-event-container {
 	background: white;
@@ -138,6 +141,9 @@
 		}
 		a {
 			color: white;
+		}
+		p > a {
+			color: darken($purple,5%);
 		}
 	}
 }

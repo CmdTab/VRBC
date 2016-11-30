@@ -20,7 +20,7 @@
 				font-size: 2em;
 			}
 			@include bp(44) {
-				font-size: 2em;
+				font-size: 2.5em;
 			}
 		}
 	}
@@ -115,12 +115,11 @@
 		}
 		.serve-type {
 			position: absolute;
-			bottom: 0.25em;
-			left: 0.75em;
+			bottom: -0.25em;
+			left: 0.5em;
 			padding: 0 !important;
 			img {
 				display: inline-block;
-				max-width: 2.5em;
 			}
 		}
 	}

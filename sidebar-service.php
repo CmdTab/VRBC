@@ -7,7 +7,7 @@
 ?>
 <div class="third sidebar single-event-sidebar">
 	<div class="full-event-info">
-		<h2>Event Details</h2>
+		<h2>Serve Details</h2>
 		
 		<ul>
 			<?php
@@ -27,7 +27,7 @@
 
 							?>
 
-							<strong><?php echo $label; ?> </strong>
+							<strong><?php echo $label; ?></strong>
 							<?php echo $info; ?>
 
 
@@ -37,7 +37,7 @@
 
 				        	?>
 
-				        		<strong><?php echo $repeat_label; ?> </strong>
+				        		<strong><?php echo $repeat_label; ?></strong>
 
 				        		<?php if( have_rows('repeater_info') ): ?>
 								<?php while ( have_rows('repeater_info') ) : the_row();
@@ -47,7 +47,7 @@
 								?>
 
 								
-								<?php echo $repeat_info; ?><br />
+								<?php echo $repeat_info; ?>,
 
 								<?php endwhile; ?>
 							<?php endif; ?>
@@ -59,7 +59,7 @@
 
 							?>
 
-							<strong><?php echo $label; ?> </strong>
+							<strong><?php echo $label; ?></strong>
 							<a href="<?php echo $info; ?>" target="_blank"><?php echo $info; ?></a>
 
 						<?php elseif( get_row_layout() == 'text_area' ): 
@@ -69,7 +69,7 @@
 
 							?>
 
-							<strong><?php echo $label; ?> </strong>
+							<strong><?php echo $label; ?></strong>
 							<?php echo $info; ?>
 
 						<?php endif; ?>
@@ -85,31 +85,6 @@
 			endif;
 
 			?>
-			<!-- <h2>Reminder</h2> -->
-			<!-- Get event information, see template: event-meta-event-single.php -->
-			<?php eo_get_template_part('event-meta','event-single'); ?>
-			<!-- <li class="event-meta side-category"> -->
-
-			<?php
-				//Events have their own 'event-category' taxonomy. Get list of categories this event is in.
-				$categories_list = get_the_term_list( get_the_ID(), 'event-category', '', ', ','');
-
-				if ( '' != $categories_list ) { ?>
-					<li>
-					<?php $utility_text = __( 'Event category: %1$s', 'eventorganiser' );
-					printf(
-						'<strong>'.$utility_text.'</strong>',
-						$categories_list,
-						esc_url( get_permalink() ),
-						the_title_attribute( 'echo=0' ),
-						get_the_author(),
-						esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
-					); ?>
-					</li>
-				<?php }
-			?>
-				
-
 		</ul>
 	</div>
 </div>

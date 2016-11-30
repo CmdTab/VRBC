@@ -151,6 +151,15 @@ function create_tax() {
 			'hierarchical' => true,
 		)
 	);
+	register_taxonomy(
+		'service-type',
+		array('service'),
+		array(
+			'label' => __( 'Type of Service' ),
+			'rewrite' => array( 'slug' => 'service-type' ),
+			'hierarchical' => true,
+		)
+	);
 }
 /*Custom Post Types*/
 function create_post_type() {
@@ -166,6 +175,19 @@ function create_post_type() {
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author')
 	);
 	register_post_type( 'sermons', $sermonArgs );
+
+	$serviceArgs = array(
+		'label'  => 'Services',
+		'labels' => array(
+			'singular_name' => 'Service'
+			),
+		'public' => true,
+		'has_archive' => true,
+		'menu_position' => 6,
+		'taxonomies' => array('grow', 'family', 'serve', 'explore'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author')
+	);
+	register_post_type( 'service', $serviceArgs );
 }
 add_action( 'init', 'create_post_type' );
 
@@ -193,4 +215,14 @@ function get_desc_excerpt(){
 	return $excerpt;
 }
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Service Settings',
+		'menu_title'	=> 'Service Settings',
+		'menu_slug' 	=> 'service-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 
+}
