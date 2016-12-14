@@ -71,6 +71,32 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</div><!-- .entry-content -->
 
+			<div class="more-info-container group">
+
+				<?php
+
+					$post_object = get_field('serve_page');
+
+					if( $post_object ):
+
+						// override $post
+						$post = $post_object;
+						setup_postdata( $post );
+
+						?>
+
+						<div class="serve">
+							<h2><?php the_field('serve_title' , 'option'); ?></h2>
+							<p><?php the_field('serve_text_area' , 'option'); ?></p>
+							<a href="<?php echo $post_object; ?>" class="btn"><?php the_field('serve_button_text' , 'option'); ?></a>
+						</div>
+
+					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<?php endif; ?>
+
+
+			</div>
+
 			<footer class="entry-meta">
 			<?php
 				// Events have their own 'event-category' taxonomy. Get list of categories this event is in.

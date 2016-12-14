@@ -114,6 +114,12 @@
 		background: $purple;
 		max-width: 10em !important;
 	}
+	.event-time {
+		background-color: $purple;
+		color: #fff;
+		padding: 0.5em 1em;
+		font-size: 0.9em;
+	}
 	.entry-content {
 		> img {
 			display: none;

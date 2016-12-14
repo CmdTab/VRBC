@@ -160,6 +160,15 @@ function create_tax() {
 			'hierarchical' => true,
 		)
 	);
+	register_taxonomy(
+		'featured',
+		array('service'),
+		array(
+			'label' => __( 'Featured Post' ),
+			'rewrite' => array( 'slug' => 'service-type' ),
+			'hierarchical' => true,
+		)
+	);
 }
 /*Custom Post Types*/
 function create_post_type() {
@@ -216,7 +225,7 @@ function get_desc_excerpt(){
 }
 
 if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Service Settings',
 		'menu_title'	=> 'Service Settings',

@@ -50,7 +50,7 @@ get_header(); ?>
 
 			</header><!-- .entry-header -->
 
-			
+
 
 			<?php get_sidebar('details-mobile'); ?>
 		</div>
@@ -58,13 +58,14 @@ get_header(); ?>
 		<div id="primary" class="primary two-third first group">
 			<?php while ( have_posts() ) : the_post(); ?>
 
-
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<header class="entry-header">
 
 				<!-- Display event title -->
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title">
+					<?php the_title(); ?>
+				</h1>
 
 			</header><!-- .entry-header -->
 
@@ -86,11 +87,11 @@ get_header(); ?>
 
 					$post_object = get_field('event_page');
 
-					if( $post_object ): 
+					if( $post_object ):
 
 						// override $post
 						$post = $post_object;
-						setup_postdata( $post ); 
+						setup_postdata( $post );
 
 						?>
 
