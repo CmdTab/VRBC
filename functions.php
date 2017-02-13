@@ -165,7 +165,7 @@ function create_tax() {
 		array('service'),
 		array(
 			'label' => __( 'Featured Post' ),
-			'rewrite' => array( 'slug' => 'service-type' ),
+			'rewrite' => array( 'slug' => 'featured' ),
 			'hierarchical' => true,
 		)
 	);

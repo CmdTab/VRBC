@@ -24,7 +24,16 @@ get_header(); ?>
 <!-- This template follows the TwentyTwelve theme-->
 <div class="page-container group">
 	<div class="feature-banner">
-		<img src="http://local-vrbc.com/wp-content/uploads/2016/03/banner-attend.jpg" />
+		<?php
+
+		$image = get_field('serve_page_banner' , 'option');
+
+		if( !empty($image) ): ?>
+
+			<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+		<?php endif; ?>
+
 		<h1 class="entry-title">
 			<?php
 				if( eo_is_event_archive('day') )
@@ -40,6 +49,7 @@ get_header(); ?>
 					_e('Service Opportunities','eventorganiser');
 			?>
 		</h1>
+
 	</div>
 
 	<!--    FEATURED LOOP      -->
@@ -89,10 +99,10 @@ get_header(); ?>
 					<div class="half last">
 						<a href="<?php the_permalink(); ?>" class="serve-title">
 							<h2><?php the_title();?></h2>
-							<div class="event-time">
-								<?php echo $event_date; ?> at
-								<?php echo $event_time; ?>
-							</div>
+							<!-- <div class="event-time">
+								<?php //echo $event_date; ?> at
+								<?php //echo $event_time; ?>
+							</div> -->
 						</a>
 						<hr />
 						<!-- Show Event text as 'the_excerpt' or 'the_content' -->
@@ -177,6 +187,18 @@ get_header(); ?>
 	<?php wp_reset_postdata(); endif;  ?>
 	<div id="primary" class="primary serve-feature">
 		<div class="service-nav">
+			<div class="service-search-bar">
+				<input type="hidden" name="post_type[]" value="service" />
+				<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+					<input type="text" name="s" id="s" <?php if(is_search()) { ?>value="<?php the_search_query(); ?>" <?php } else { ?>value="Search Service &hellip;" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"<?php } ?> /><br />
+
+					<?php $query_types = get_query_var('post_type'); ?>
+
+					<input type="checkbox" name="post_type[]" value="service" checked />
+
+					<input type="submit" id="searchsubmit" value="Search" />
+				</form>
+			</div>
 			<div class="service-cat">
 				<a href="#" class="btn">
 					Browse by Type
@@ -191,7 +213,7 @@ get_header(); ?>
 					</li>
 					<li>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/family">
-							<img src="<?php the_field( 'family_icon' , 'option'); ?>" /> Family
+							<img src="<?php the_field('family_icon' , 'option'); ?>" /> Family
 						</a>
 					</li>
 					<li>
@@ -233,21 +255,24 @@ get_header(); ?>
 		</div>
 
 		<?php
+			$currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 			$exclude_arg = array(
 				'post_type'      => 'service',
 				'post__not_in'   => $exclude_post,
-				'post_per_page'  => 1,
 				'meta_key'       => 'date_of_event',
 				'orderby'        => 'meta_value',
-				'order'          => 'ASC'
+				'order'          => 'ASC',
+				'paged'          => $currentPage
 			);
-			$full_loop = new WP_Query( $exclude_arg );
 
-			if ( $full_loop->have_posts() ) : ?>
+			$service_loop = new WP_Query( $exclude_arg );
+
+			if ( $service_loop->have_posts() ) : ?>
 
 				<ul class="three-list group event-list">
 
-				<?php while ( $full_loop->have_posts() ) : $full_loop->the_post();
+				<?php while ( $service_loop->have_posts() ) : $service_loop->the_post();
 					$event_date = get_field('date_of_event');
 					$event_time = get_field('time_of_event');
 				?>
@@ -262,10 +287,10 @@ get_header(); ?>
 							</a>
 								<a href="<?php the_permalink(); ?>" class="serve-title">
 									<h4><?php the_title();?></h4>
-									<div class="event-time">
-										<?php echo $event_date; ?> at
-										<?php echo $event_time; ?>
-									</div>
+									<!-- <div class="event-time">
+										<?php //echo $event_date; ?> at
+										<?php //echo $event_time; ?>
+									</div> -->
 								</a>
 							</h4>
 
@@ -275,6 +300,23 @@ get_header(); ?>
 								<?php echo get_desc_excerpt(); ?>
 								... <a href="<?php the_permalink(); ?>">Read More</a>
 
+								<div class="type-icon">
+
+									<?php
+										$postID = get_the_ID();
+										$terms = get_the_terms( $postID, 'service-type' );
+
+										foreach ( $terms as $term ) :
+											$term_ID = $term->term_id;
+											$taxonomy_name = $term->taxonomy;
+											$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+									?>
+
+										<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+									<?php endforeach; ?>
+
+								</div>
 							</div>
 
 						</header><!-- .entry-header -->
@@ -284,19 +326,15 @@ get_header(); ?>
 	    		<?php endwhile; ?><!--The Loop ends-->
 
 				</ul>
+				<nav class="service-post-nav">
+					<?php previous_posts_link( 'Previous Page' ); ?>
+					<?php next_posts_link('Next Page' , $service_loop->max_num_pages); ?>
+				</nav>
 
 			<?php wp_reset_postdata(); endif;
 
 		?>
 
-		<!-- Navigate between pages-->
-
-		<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-				<nav id="nav-below">
-					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
-					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
-				</nav><!-- #nav-below -->
-		<?php endif; ?>
 
 	</div><!-- #primary -->
 

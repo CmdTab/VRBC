@@ -7,7 +7,7 @@
 		"uuidString": "2DA124A0-CDAA-4791-AB4A-9691E8923F0F"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25479",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -1427,6 +1427,12 @@
 		"oAP": "\/search-event-list.php",
 		"oF": 0
 		},
+	"\/search-service.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/search-service.php",
+		"oF": 0
+		},
 	"\/search.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -1455,12 +1461,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/sidebar-events.php",
-		"oF": 0
-		},
-	"\/sidebar-service.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/sidebar-service.php",
 		"oF": 0
 		},
 	"\/sidebar.php": {
@@ -1513,6 +1513,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/style.css.map",
+		"oF": 0
+		},
+	"\/svg\/icon-chevron-left.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/svg\/icon-chevron-left.php",
+		"oF": 0
+		},
+	"\/svg\/icon-chevron-right.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/svg\/icon-chevron-right.php",
 		"oF": 0
 		},
 	"\/svg\/icon-close.php": {
@@ -2134,6 +2146,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -2297,6 +2313,10 @@
 		"max-statements": {
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
 			},
 		"multiline-ternary": {
 			"active": 0,
@@ -2662,6 +2682,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -2893,6 +2917,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -3726,6 +3754,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

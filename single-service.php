@@ -83,40 +83,84 @@ get_header(); ?>
 			</div><!-- .entry-content -->
 			<div class="more-info-container group">
 
-				<?php
+				<?php if( get_field('choose_form') == 'contact' ): ?>
 
-					$post_object = get_field('event_page');
+					<?php
 
-					if( $post_object ):
+						$post_object = get_field('event_page');
 
-						// override $post
-						$post = $post_object;
-						setup_postdata( $post );
+						if( $post_object ):
 
-						?>
+							// override $post
+							$post = $post_object;
+							setup_postdata( $post );
 
-						<div class="half first serve">
-							<h2><?php the_field('serve_title' , 'option'); ?></h2>
-							<p><?php the_field('serve_text_area' , 'option'); ?></p>
-							<a href="#" class="btn contact-form-trigger"><?php the_field('serve_button_text' , 'option'); ?></a>
-						</div>
+							?>
 
-						<div class="half attend">
-							<h2><?php the_field('attend_title' , 'option'); ?></h2>
-							<p><?php the_field('attend_text_area' , 'option'); ?></p>
-							<a href="<?php echo $post_object; ?>" class="btn"><?php the_field('attend_button_text' , 'option'); ?></a>
-						</div>
+							<div class="half first serve">
+								<h2><?php the_field('serve_title' , 'option'); ?></h2>
+								<p><?php the_field('serve_text_area' , 'option'); ?></p>
+								<a href="#" class="btn contact-form-trigger"><?php the_field('serve_button_text' , 'option'); ?></a>
+							</div>
 
-					<?php else: ?>
+							<div class="half attend">
+								<h2><?php the_field('attend_title' , 'option'); ?></h2>
+								<p><?php the_field('attend_text_area' , 'option'); ?></p>
+								<a href="<?php echo $post_object; ?>" class="btn"><?php the_field('attend_button_text' , 'option'); ?></a>
+							</div>
 
-						<div class="serve">
-							<h2><?php the_field('serve_title' , 'option'); ?></h2>
-							<p><?php the_field('serve_text_area' , 'option'); ?></p>
-							<a href="#" class="btn contact-form-trigger"><?php the_field('serve_button_text' , 'option'); ?></a>
-						</div>
+						<?php else: ?>
 
-					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+							<div class="serve">
+								<h2><?php the_field('serve_title' , 'option'); ?></h2>
+								<p><?php the_field('serve_text_area' , 'option'); ?></p>
+								<a href="#" class="btn contact-form-trigger"><?php the_field('serve_button_text' , 'option'); ?></a>
+							</div>
+
+						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+					<?php endif; ?>
+
 				<?php endif; ?>
+
+				<?php if( get_field('choose_form') == 'external' ): ?>
+
+					<?php
+						$external_link = get_field('external_form_link');
+						$post_object = get_field('event_page');
+
+						if( $post_object ):
+
+							// override $post
+							$post = $post_object;
+							setup_postdata( $post );
+
+							?>
+
+							<div class="half first serve">
+								<h2><?php the_field('serve_title' , 'option'); ?></h2>
+								<p><?php the_field('serve_text_area' , 'option'); ?></p>
+								<a href="<?php echo $external_link; ?>" class="btn" target="_blank"><?php the_field('serve_button_text' , 'option'); ?></a>
+							</div>
+
+							<div class="half attend">
+								<h2><?php the_field('attend_title' , 'option'); ?></h2>
+								<p><?php the_field('attend_text_area' , 'option'); ?></p>
+								<a href="<?php echo $post_object; ?>" class="btn"><?php the_field('attend_button_text' , 'option'); ?></a>
+							</div>
+
+						<?php else: ?>
+
+							<div class="serve">
+								<h2><?php the_field('serve_title' , 'option'); ?></h2>
+								<p><?php the_field('serve_text_area' , 'option'); ?></p>
+								<a href="<?php echo $external_link; ?>" class="btn" target="_blank"><?php the_field('serve_button_text' , 'option'); ?></a>
+							</div>
+
+						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+					<?php endif; ?>
+
+				<?php endif; ?>
+
 
 
 			</div>

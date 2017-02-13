@@ -26,9 +26,9 @@ get_header(); ?>
 				<?php
 
 					// vars
-					$queried_object = get_queried_object(); 
+					$queried_object = get_queried_object();
 					$taxonomy = $queried_object->taxonomy;
-					$term_id = $queried_object->term_id;  
+					$term_id = $queried_object->term_id;
 
 					// load thumbnail for this taxonomy term (term object)
 					$thumbnail = get_field('banner_header', $queried_object);
@@ -38,8 +38,8 @@ get_header(); ?>
 
 				?>
 
-				<img src="<?php echo $thumbnail['url']; ?>" alt="..." />
-				
+				<img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" />
+
 				<p><?php echo category_description(); ?> </p>
 
 				<h1 class="entry-title">
@@ -99,7 +99,7 @@ get_header(); ?>
 							</li>
 							<li>
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/international">
-									<img src="<?php the_field('international_icon' , 'option'); ?>" /> International 
+									<img src="<?php the_field('international_icon' , 'option'); ?>" /> International
 								</a>
 							</li>
 						</ul>
@@ -175,7 +175,23 @@ get_header(); ?>
 						<!-- Show Event text as 'the_excerpt' or 'the_content' -->
 						<?php echo get_desc_excerpt(); ?>
 						... <a href="<?php the_permalink(); ?>">Read More</a>
+						<div class="type-icon">
 
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-type' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+						</div>
 					</div>
 
 				</div><!-- .event-entry-meta -->

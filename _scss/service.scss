@@ -36,7 +36,70 @@
 	}
 }
 .service-nav {
+	position: relative;
 	margin: 1.5em auto;
+}
+.service-search-bar {
+	font-weight: bold;
+	text-transform: lowercase;
+	font-family: "adelle",serif;
+	color: #fff;
+    display: block;
+    background: $teal;
+    padding: 0;
+    border-radius: 0.25em;
+    font-size: 0.875em;
+	position: relative;
+	text-align: right;
+	margin-bottom: 1em;
+	@include bp(44) {
+		position: absolute;
+	    right: 0;
+	    top: 0;
+	}
+	form {
+		width: 100%;
+	}
+	label {
+		margin-right: 0.5em;
+		width: 20%;
+	}
+	input {
+		font-weight: bold;
+		text-transform: lowercase;
+		font-family: "adelle",serif;
+		border: none;
+		border-radius: 0.25em;
+		padding: 0.25em;
+		width: 100%;
+		background-color: transparent;
+		color: #fff;
+		&:focus {
+			outline: none;
+		}
+		@include bp(44) {
+			width: 16em;
+		}
+		@include bp(62.5) {
+			width: 20em;
+		}
+		&[type="text"] {
+			padding: 1em 1.5em;
+		}
+		&[type="checkbox"] {
+			display: none;
+		}
+		&[type="submit"] {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 6em;
+			font-size: 0.875em;
+			padding: 0.5em;
+			background-color: darken($teal, 15%);
+		}
+	}
 }
 .service-cat {
 	display: block;
@@ -228,7 +291,7 @@
 		font-size: 0.875em;
 	}
 	.gform_wrapper {
-		margin: 1.5em auto 0 !important;
+		margin: 0 auto;
 		ul.gform_fields {
 			list-style: none;
 			padding: 0;
@@ -407,7 +470,7 @@
 .featured-post {
 	hr {
 		width: 5em;
-		margin: 0 0 1.25em;
+		margin: 1em 0;
 	}
 	p {
 		font-size: 1em;
@@ -473,5 +536,34 @@
 	.btn {
 		margin: 1em auto;
 		font-size: 1em;
+	}
+}
+.type-icon {
+    text-align: left;
+    padding-top: 1em;
+    padding-left: 0.5em;
+	img {
+		margin-bottom: 0;
+		max-width: 1.75em;
+		max-height: 1.75em;
+		margin-right: 0.5em;
+	}
+}
+.service-post-nav {
+	display: block;
+	margin: 0 auto 1em;
+	text-align: right;
+	a {
+		color: $text;
+		border-radius: 0.25em;
+		font-size: 0.875em;
+		text-decoration: underline;
+		&:first-of-type {
+			margin-right: 1em;
+		}
+	}
+	.icon {
+		vertical-align: middle;
+		margin-top: -0.05em;
 	}
 }

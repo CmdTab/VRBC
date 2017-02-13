@@ -87,6 +87,13 @@ function serviceContact () {
 	});
 }
 
+function gravityEmail () {
+	jQuery( '.contact-form-trigger' ).click(function(){
+		var recipient = jQuery('.serve-contact-form').data('recipient');
+		jQuery('.email-recipient input').val(recipient);
+	});
+}
+
 jQuery(document).ready(function() {
 	jQuery('.carousel').carousel();
 	dropDown();
@@ -98,6 +105,7 @@ jQuery(document).ready(function() {
 	matchHeight();
 	serviceToggle();
 	serviceContact();
+	gravityEmail();
 	jQuery(".sermon-video").fitVids();
 });
 

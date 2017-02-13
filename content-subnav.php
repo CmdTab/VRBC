@@ -27,4 +27,3 @@ if( have_rows('subnav_link') ):
 	</ul>
 </nav>
 <?php endif; ?>
-
