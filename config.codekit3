@@ -7,7 +7,7 @@
 		"uuidString": "2DA124A0-CDAA-4791-AB4A-9691E8923F0F"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25504",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -1647,6 +1647,12 @@
 		"oAP": "\/taxonomy-series.php",
 		"oF": 0
 		},
+	"\/taxonomy-service-location.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/taxonomy-service-location.php",
+		"oF": 0
+		},
 	"\/taxonomy-service-type.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2350,6 +2356,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -2889,6 +2899,10 @@
 		"prefer-const": {
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
+			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
 			},
 		"prefer-numeric-literals": {
 			"active": 0,

@@ -33,7 +33,7 @@
 <div class="contact-form-container">
 	<div class="serve-contact-form" data-recipient="<?php the_field('recipient_email'); ?>">
 		<?php include('svg/icon-close.php'); ?>
-		<?php gravity_form( 3, true, true, false, '', true ); ?>
+		<?php gravity_form( 1, true, true, false, '', true ); ?>
 	</div>
 </div>
 

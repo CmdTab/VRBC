@@ -20,7 +20,7 @@
 get_header(); ?>
 
 		<!-- This template follows the TwentyTwelve theme-->
-		<div class="page-container group taxonomy-container">
+		<div class="page-container group taxonomy-container service-container">
 
 			<div class="serve-banner">
 				<?php
@@ -38,7 +38,9 @@ get_header(); ?>
 
 				?>
 
-				<img src="<?php echo $thumbnail['url']; ?>" alt="..." />
+				<img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" />
+
+				<p><?php echo category_description(); ?> </p>
 
 				<h1 class="entry-title">
 					<?php
@@ -47,48 +49,74 @@ get_header(); ?>
 				</h1>
 			</div>
 
-			<div class="serve-filters">
-				<ul class="four-list group">
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>eventtype/on-campus">On Campus</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>eventtype/local">Local</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>eventtype/international">International</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>eventtype/serve">All</a>
-					</li>
-				</ul>
-				<div class="serve-type">
-					<p class="explore-serve">
-						<?php include('svg/icon-explore.php'); ?>
-						Explore Serve
-					</p>
-					<p class="serve-team">
-						<?php include('svg/icon-team.php'); ?>
-						Serve Team
-					</p>
+			<div id="primary" class="primary event-archive service-event">
+				<div class="service-breadcrumb">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>service">
+						<?php include('svg/icon-left.php'); ?>Back to All Service Dates
+					</a>
 				</div>
-			</div>
-
-			<div id="primary" class="primary event-archive">
+				<div class="service-nav">
+					<div class="service-cat">
+						<a href="#" class="btn">
+							Browse by Type
+							<?php include('svg/icon-down.php'); ?>
+							<?php include('svg/icon-up.php'); ?>
+						</a>
+						<ul>
+							<?php
+								$args = array(
+								  'taxonomy'  =>  'service-type',
+								  'title_li'   =>   0,
+								  'orderby'    =>   'name',
+								);
+								$terms = get_terms( $args );
+								foreach ( $terms as $term ) {
+									$term_link = get_term_link( $term );
+									$icon = get_field('service_icon', $term );
+									echo '<li><a href="' . $term_link . '"><img src="' . $icon['url'] . '" />' . $term->name . ' </a></li>';
+								}
+							?>
+						</ul>
+					</div>
+					<div class="service-cat">
+						<a href="#" class="btn">
+							Browse by Location
+							<?php include('svg/icon-down.php'); ?>
+							<?php include('svg/icon-up.php'); ?>
+						</a>
+						<ul>
+							<?php
+								$args = array(
+								  'taxonomy'  =>  'service-location',
+								  'title_li'   =>   0,
+								  'orderby'    =>   'name',
+								);
+								$terms = get_terms( $args );
+								foreach ( $terms as $term ) {
+									$term_link = get_term_link( $term );
+									$icon = get_field('service_icon', $term );
+									echo '<li><a href="' . $term_link . '"><img src="' . $icon['url'] . '" />' . $term->name . ' </a></li>';
+								}
+							?>
+						</ul>
+					</div>
+				</div>
 
 			<?php if ( have_posts() ) : ?>
 
 				<!-- Page header, display category title-->
 				<!-- <header class="event-header">
+					<h1 class="entry-title"><?php
+						//printf( __( '%s', 'eventorganiser' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					?></h1> -->
 
-
-				If the category has a description display it-->
-					<?php
-						// $category_description = category_description();
-						// if ( ! empty( $category_description ) )
-						// 	echo apply_filters( 'category_archive_meta', '<div class="category-archive-// meta">' . $category_description . '</div>' );
+				<!-- If the category has a description display it-->
+					<!-- <?php
+						//$category_description = category_description();
+						//if ( ! empty( $category_description ) )
+						//	echo apply_filters( 'category_archive_meta', '<div class="category-archive-//meta">' . $category_description . '</div>' );
 					?>
-				<!-- </header> -->
+				</header> -->
 
 				<!-- Navigate between pages-->
 				<!-- In TwentyEleven theme this is done by twentyeleven_content_nav-->
@@ -143,28 +171,42 @@ get_header(); ?>
 						<!-- Show Event text as 'the_excerpt' or 'the_content' -->
 						<?php echo get_desc_excerpt(); ?>
 						... <a href="<?php the_permalink(); ?>">Read More</a>
+						<div class="type-icon">
 
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-type' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-location' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+						</div>
 					</div>
 
 				</div><!-- .event-entry-meta -->
 
 					</header><!-- .entry-header -->
-
-						<div class="serve-type">
-							<?php if ( has_term( 'serve-team', 'eventtype', $post )) { ?>
-
-							   	<p class="serve-team">
-									<?php include('svg/icon-team.php'); ?>
-								</p>
-
-							<?php } elseif ( has_term( 'explore-serve', 'eventtype', $post )) { ?>
-
-							   	<p class="explore-serve">
-							   		<?php include('svg/icon-explore.php'); ?>
-								</p>
-
-							<?php } ?>
-						</div>
 
 				</li><!-- #post-<?php the_ID(); ?> -->
 

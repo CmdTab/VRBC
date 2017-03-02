@@ -3,6 +3,10 @@
 	.no-results {
 		padding-bottom: 2em;
 	}
+	.service-breadcrumb {
+		padding: 0 0 1em;
+	    margin-top: -0.5em;
+	}
 }
 .service-container {
 	.serve-banner .entry-title {
@@ -45,7 +49,8 @@
 	font-family: "adelle",serif;
 	color: #fff;
     display: block;
-    background: $teal;
+    background: transparent;
+	border: 0.15em solid $off-white;
     padding: 0;
     border-radius: 0.25em;
     font-size: 0.875em;
@@ -69,11 +74,11 @@
 		text-transform: lowercase;
 		font-family: "adelle",serif;
 		border: none;
-		border-radius: 0.25em;
+		border-radius: 0em;
 		padding: 0.25em;
 		width: 100%;
 		background-color: transparent;
-		color: #fff;
+		color: $off-white;
 		&:focus {
 			outline: none;
 		}
@@ -84,7 +89,7 @@
 			width: 20em;
 		}
 		&[type="text"] {
-			padding: 1em 1.5em;
+			padding: 1em;
 		}
 		&[type="checkbox"] {
 			display: none;
@@ -97,7 +102,8 @@
 			width: 6em;
 			font-size: 0.875em;
 			padding: 0.5em;
-			background-color: darken($teal, 15%);
+			background-color: $off-white;
+			color: #fff;
 		}
 	}
 }
@@ -426,7 +432,7 @@
 .two-featured-post,
 .three-featured-post {
 	background-color: $white;
-	padding: 2em 1em;
+	padding: 0;
 	margin: 0;
 	img {
 		display: block;
@@ -442,6 +448,9 @@
 	h3,
 	p {
 		color: $text,
+	}
+	p {
+		font-size: 0.875em;
 	}
 	hr {
 		height: 1px;
@@ -464,10 +473,21 @@
 		}
 	}
 	li {
+		position: relative;
 		padding: 0;
+	}
+	.type-icon {
+		float: left;
+		img {
+			display: inline-block;
+		}
 	}
 }
 .featured-post {
+	padding: 1em;
+	.half {
+		position: relative;
+	}
 	hr {
 		width: 5em;
 		margin: 1em 0;
@@ -480,6 +500,11 @@
 	}
 	.last {
 		margin-bottom: 0;
+	}
+	.type-icon {
+		bottom: -2.75em;
+		left: 0;
+		padding-left: 0;
 	}
 }
 .two-featured-post,
@@ -500,6 +525,7 @@
 		}
 		@include bp(44) {
 			margin: 0 0 1em 0;
+			padding: 1em 1em 3em;
 			width: 50%;
 			&:nth-child(1) {
 				border-right: 1px solid rgba(192, 192, 192, 0.5);
@@ -526,7 +552,7 @@
 			border-right: 1px solid rgba(192, 192, 192, 0.5);
 			width: 33.333%;
 			margin: 0;
-			padding: 0 2em;
+			padding: 1em 1em 3em;
 			&:last-child {
 				margin: 0;
 				border: none;
@@ -542,10 +568,13 @@
     text-align: left;
     padding-top: 1em;
     padding-left: 0.5em;
+	position: absolute;
+	bottom: 0.5em;
+	left: 0.5em;
 	img {
 		margin-bottom: 0;
-		max-width: 1.75em;
-		max-height: 1.75em;
+		max-width: 1.25em;
+		max-height: 1.25em;
 		margin-right: 0.5em;
 	}
 }

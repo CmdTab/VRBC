@@ -161,6 +161,15 @@ function create_tax() {
 		)
 	);
 	register_taxonomy(
+		'service-location',
+		array('service'),
+		array(
+			'label' => __( 'Location' ),
+			'rewrite' => array( 'slug' => 'service-location' ),
+			'hierarchical' => true,
+		)
+	);
+	register_taxonomy(
 		'featured',
 		array('service'),
 		array(

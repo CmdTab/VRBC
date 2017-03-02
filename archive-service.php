@@ -84,10 +84,7 @@ get_header(); ?>
 	<?php if($i == 1) : ?>
 
 		<div class="featured-post group">
-			<?php while ( $loop->have_posts() ) : $loop->the_post();
-				$event_date = get_field('date_of_event');
-				$event_time = get_field('time_of_event');
-			?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post();?>
 					<div class="half first">
 						<a href="<?php the_permalink(); ?>">
 							<?php
@@ -99,15 +96,42 @@ get_header(); ?>
 					<div class="half last">
 						<a href="<?php the_permalink(); ?>" class="serve-title">
 							<h2><?php the_title();?></h2>
-							<!-- <div class="event-time">
-								<?php //echo $event_date; ?> at
-								<?php //echo $event_time; ?>
-							</div> -->
 						</a>
 						<hr />
 						<!-- Show Event text as 'the_excerpt' or 'the_content' -->
 						<p><?php echo get_desc_excerpt(); ?></p>
 						<a href="<?php the_permalink(); ?>" class="btn">Read More</a>
+						<div class="type-icon">
+
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-type' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-location' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+						</div>
 					</div>
 			<?php $exclude_post[] = get_the_ID(); endwhile; ?>
 		</div>
@@ -116,10 +140,7 @@ get_header(); ?>
 
 		<div class="two-featured-post group">
 			<ul class="two-list group">
-				<?php while ( $loop->have_posts() ) : $loop->the_post();
-					$event_date = get_field('date_of_event');
-					$event_time = get_field('time_of_event');
-				?>
+				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<li id="post-<?php the_ID(); ?>" <?php post_class('event-list-archive'); ?>>
 						<a href="<?php the_permalink(); ?>">
 							<?php
@@ -129,15 +150,42 @@ get_header(); ?>
 						</a>
 						<a href="<?php the_permalink(); ?>" class="serve-title">
 							<h3><?php the_title();?></h3>
-							<span>
-								<?php echo $event_date; ?>
-								<?php echo $event_time; ?>
-							</span>
 						</a>
 						<hr />
 						<!-- Show Event text as 'the_excerpt' or 'the_content' -->
-						<?php echo get_desc_excerpt(); ?>
+						<p><?php echo get_desc_excerpt(); ?></p>
 						<a href="<?php the_permalink(); ?>" class="btn">Read More</a>
+						<div class="type-icon">
+
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-type' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-location' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
+						</div>
 					</li>
 				<?php $exclude_post[] = get_the_ID(); endwhile; ?>
 			</ul>
@@ -148,10 +196,7 @@ get_header(); ?>
 			<div class="three-featured-post group">
 				<ul class="three-list group event-list">
 
-					<?php while ( $loop->have_posts() ) : $loop->the_post();
-						$event_date = get_field('date_of_event');
-						$event_time = get_field('time_of_event');
-					?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 						<li id="post-<?php the_ID(); ?>" <?php post_class('event-list-archive'); ?>>
 							<div class="entry-header">
@@ -163,17 +208,43 @@ get_header(); ?>
 								</a>
 								<a href="<?php the_permalink(); ?>" class="serve-title">
 									<h3><?php the_title();?></h3>
-									<span>
-										<?php echo $event_date; ?>
-										<?php echo $event_time; ?>
-									</span>
 								</a>
 								<div class="entry-excerpt">
 									<hr />
 									<!-- Show Event text as 'the_excerpt' or 'the_content' -->
-									<?php echo get_desc_excerpt(); ?>
-									... <a href="<?php the_permalink(); ?>" class="btn">Read More</a>
+									<p><?php echo get_desc_excerpt(); ?></p>
+									<a href="<?php the_permalink(); ?>" class="btn">Read More</a>
+									<div class="type-icon">
 
+										<?php
+											$postID = get_the_ID();
+											$terms = get_the_terms( $postID, 'service-type' );
+
+											foreach ( $terms as $term ) :
+												$term_ID = $term->term_id;
+												$taxonomy_name = $term->taxonomy;
+												$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+										?>
+
+											<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+										<?php endforeach; ?>
+
+										<?php
+											$postID = get_the_ID();
+											$terms = get_the_terms( $postID, 'service-location' );
+
+											foreach ( $terms as $term ) :
+												$term_ID = $term->term_id;
+												$taxonomy_name = $term->taxonomy;
+												$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+										?>
+
+											<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+										<?php endforeach; ?>
+
+									</div>
 								</div>
 							</div><!-- .entry-header -->
 						</li><!-- #post-<?php the_ID(); ?> -->
@@ -206,26 +277,19 @@ get_header(); ?>
 					<?php include('svg/icon-up.php'); ?>
 				</a>
 				<ul>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/explore">
-							<img src="<?php the_field('explore_icon' , 'option'); ?>" /> Explore
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/family">
-							<img src="<?php the_field('family_icon' , 'option'); ?>" /> Family
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/grow">
-							<img src="<?php the_field('grow_icon' , 'option'); ?>" /> Grow
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/serve">
-							<img src="<?php the_field('serve_icon' , 'option'); ?>" /> Serve
-						</a>
-					</li>
+					<?php
+						$args = array(
+						  'taxonomy'  =>  'service-type',
+						  'title_li'   =>   0,
+						  'orderby'    =>   'name',
+						);
+						$terms = get_terms( $args );
+						foreach ( $terms as $term ) {
+							$term_link = get_term_link( $term );
+							$icon = get_field('service_icon', $term );
+							echo '<li><a href="' . $term_link . '"><img src="' . $icon['url'] . '" />' . $term->name . ' </a></li>';
+						}
+					?>
 				</ul>
 			</div>
 			<div class="service-cat">
@@ -235,21 +299,19 @@ get_header(); ?>
 					<?php include('svg/icon-up.php'); ?>
 				</a>
 				<ul>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/on-campus">
-							<img src="<?php the_field('on_campus_icon' , 'option'); ?>" /> On Campus
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/local">
-							<img src="<?php the_field('local_icon' , 'option'); ?>" /> Local
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/international">
-							<img src="<?php the_field('international_icon' , 'option'); ?>" /> International
-						</a>
-					</li>
+					<?php
+						$args = array(
+						  'taxonomy'  =>  'service-location',
+						  'title_li'   =>   0,
+						  'orderby'    =>   'name',
+						);
+						$terms = get_terms( $args );
+						foreach ( $terms as $term ) {
+							$term_link = get_term_link( $term );
+							$icon = get_field('service_icon', $term );
+							echo '<li><a href="' . $term_link . '"><img src="' . $icon['url'] . '" />' . $term->name . ' </a></li>';
+						}
+					?>
 				</ul>
 			</div>
 		</div>
@@ -298,13 +360,27 @@ get_header(); ?>
 								<hr />
 								<!-- Show Event text as 'the_excerpt' or 'the_content' -->
 								<?php echo get_desc_excerpt(); ?>
-								... <a href="<?php the_permalink(); ?>">Read More</a>
+								<a href="<?php the_permalink(); ?>">Read More</a>
 
 								<div class="type-icon">
 
 									<?php
 										$postID = get_the_ID();
 										$terms = get_the_terms( $postID, 'service-type' );
+
+										foreach ( $terms as $term ) :
+											$term_ID = $term->term_id;
+											$taxonomy_name = $term->taxonomy;
+											$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+									?>
+
+										<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+									<?php endforeach; ?>
+
+									<?php
+										$postID = get_the_ID();
+										$terms = get_the_terms( $postID, 'service-location' );
 
 										foreach ( $terms as $term ) :
 											$term_ID = $term->term_id;

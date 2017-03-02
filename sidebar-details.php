@@ -85,30 +85,6 @@
 			endif;
 
 			?>
-			<!-- <h2>Reminder</h2> -->
-			<!-- Get event information, see template: event-meta-event-single.php -->
-			<?php eo_get_template_part('event-meta','event-single'); ?>
-			<!-- <li class="event-meta side-category"> -->
-
-			<?php
-				//Events have their own 'event-category' taxonomy. Get list of categories this event is in.
-				$categories_list = get_the_term_list( get_the_ID(), 'event-category', '', ', ','');
-
-				if ( '' != $categories_list ) { ?>
-					<li>
-					<?php $utility_text = __( 'Event category: %1$s', 'eventorganiser' );
-					printf(
-						'<strong>'.$utility_text.'</strong>',
-						$categories_list,
-						esc_url( get_permalink() ),
-						the_title_attribute( 'echo=0' ),
-						get_the_author(),
-						esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
-					); ?>
-					</li>
-				<?php }
-			?>
-
 
 		</ul>
 	</div>

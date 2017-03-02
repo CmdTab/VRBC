@@ -50,6 +50,11 @@ get_header(); ?>
 			</div>
 
 			<div id="primary" class="primary event-archive service-event">
+				<div class="service-breadcrumb">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>service">
+						<?php include('svg/icon-left.php'); ?>Back to All Service Dates
+					</a>
+				</div>
 				<div class="service-nav">
 					<div class="service-cat">
 						<a href="#" class="btn">
@@ -58,26 +63,19 @@ get_header(); ?>
 							<?php include('svg/icon-up.php'); ?>
 						</a>
 						<ul>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/explore">
-									<img src="<?php the_field('explore_icon' , 'option'); ?>" /> Explore
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/family">
-									<img src="<?php the_field( 'family_icon' , 'option'); ?>" /> Family
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/grow">
-									<img src="<?php the_field('grow_icon' , 'option'); ?>" /> Grow
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/serve">
-									<img src="<?php the_field('serve_icon' , 'option'); ?>" /> Serve
-								</a>
-							</li>
+							<?php
+								$args = array(
+								  'taxonomy'  =>  'service-type',
+								  'title_li'   =>   0,
+								  'orderby'    =>   'name',
+								);
+								$terms = get_terms( $args );
+								foreach ( $terms as $term ) {
+									$term_link = get_term_link( $term );
+									$icon = get_field('service_icon', $term );
+									echo '<li><a href="' . $term_link . '"><img src="' . $icon['url'] . '" />' . $term->name . ' </a></li>';
+								}
+							?>
 						</ul>
 					</div>
 					<div class="service-cat">
@@ -87,21 +85,19 @@ get_header(); ?>
 							<?php include('svg/icon-up.php'); ?>
 						</a>
 						<ul>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/on-campus">
-									<img src="<?php the_field('on_campus_icon' , 'option'); ?>" /> On Campus
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/local">
-									<img src="<?php the_field('local_icon' , 'option'); ?>" /> Local
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>service-type/international">
-									<img src="<?php the_field('international_icon' , 'option'); ?>" /> International
-								</a>
-							</li>
+							<?php
+								$args = array(
+								  'taxonomy'  =>  'service-location',
+								  'title_li'   =>   0,
+								  'orderby'    =>   'name',
+								);
+								$terms = get_terms( $args );
+								foreach ( $terms as $term ) {
+									$term_link = get_term_link( $term );
+									$icon = get_field('service_icon', $term );
+									echo '<li><a href="' . $term_link . '"><img src="' . $icon['url'] . '" />' . $term->name . ' </a></li>';
+								}
+							?>
 						</ul>
 					</div>
 				</div>
@@ -191,7 +187,22 @@ get_header(); ?>
 
 							<?php endforeach; ?>
 
+							<?php
+								$postID = get_the_ID();
+								$terms = get_the_terms( $postID, 'service-location' );
+
+								foreach ( $terms as $term ) :
+									$term_ID = $term->term_id;
+									$taxonomy_name = $term->taxonomy;
+									$icon = get_field('service_icon', $taxonomy_name . '_' . $term_ID );
+							?>
+
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+
+							<?php endforeach; ?>
+
 						</div>
+
 					</div>
 
 				</div><!-- .event-entry-meta -->

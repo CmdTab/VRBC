@@ -196,7 +196,7 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 		<div class="event-detail-desktop group">
-			<?php get_sidebar('service'); ?>
+			<?php get_sidebar('details'); ?>
 		</div>
 	</div>
 </div><!--page-container-->
