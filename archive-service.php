@@ -35,19 +35,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		<h1 class="entry-title">
-			<?php
-				if( eo_is_event_archive('day') )
-					//Viewing date archive
-					echo __('Service Opportunities: ','eventorganiser').' '.eo_get_event_archive_date('jS F Y');
-				elseif( eo_is_event_archive('month') )
-					//Viewing month archive
-					echo __('Service Opportunities: ','eventorganiser').' '.eo_get_event_archive_date('F Y');
-				elseif( eo_is_event_archive('year') )
-					//Viewing year archive
-					echo __('Service Opportunities: ','eventorganiser').' '.eo_get_event_archive_date('Y');
-				else
-					_e('Service Opportunities','eventorganiser');
-			?>
+			<?php the_field('serve_page_banner_text' , 'options'); ?>
 		</h1>
 
 	</div>
@@ -78,6 +66,10 @@ get_header(); ?>
 			endwhile; wp_reset_postdata();
 
 	?>
+
+	<div class="featured-post-banner">
+		<h2>Featured Serve Opportunities</h2>
+	</div>
 
 	<!--    LOOP THROUGH NUMBERS OF POSTS     -->
 
@@ -281,7 +273,7 @@ get_header(); ?>
 						$args = array(
 						  'taxonomy'  =>  'service-type',
 						  'title_li'   =>   0,
-						  'orderby'    =>   'name',
+						  'orderby'    =>   'asc',
 						);
 						$terms = get_terms( $args );
 						foreach ( $terms as $term ) {
@@ -411,6 +403,9 @@ get_header(); ?>
 
 		?>
 
+		<div class="service-contact">
+			<p>For more information, please contact Amy Wilkins at <a href="#" mailto:"awilkins@vrbc.net">awilkins@vrbc.net</a></p>
+		</div>
 
 	</div><!-- #primary -->
 

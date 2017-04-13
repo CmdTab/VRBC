@@ -195,7 +195,7 @@ function create_post_type() {
 	register_post_type( 'sermons', $sermonArgs );
 
 	$serviceArgs = array(
-		'label'  => 'Services',
+		'label'  => 'Serve',
 		'labels' => array(
 			'singular_name' => 'Service'
 			),
@@ -203,7 +203,8 @@ function create_post_type() {
 		'has_archive' => true,
 		'menu_position' => 6,
 		'taxonomies' => array('grow', 'family', 'serve', 'explore'),
-		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author')
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+		'rewrite' => array('slug' => 'serve')
 	);
 	register_post_type( 'service', $serviceArgs );
 }

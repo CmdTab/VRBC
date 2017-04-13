@@ -7,7 +7,7 @@
 		"uuidString": "2DA124A0-CDAA-4791-AB4A-9691E8923F0F"
 		}
 	],
-"creatorBuild": "25504",
+"creatorBuild": "25704",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -138,10 +138,12 @@
 	"\/_i\/arrows.png": {
 		"ft": 32768,
 		"iS": 1562,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/arrows.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/back.jpg": {
 		"ft": 16384,
@@ -149,7 +151,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/back.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/background.jpg": {
 		"ft": 16384,
@@ -157,7 +160,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/background.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/background2.jpg": {
 		"ft": 16384,
@@ -165,7 +169,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/background2.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/banner-.jpg": {
 		"ft": 16384,
@@ -173,7 +178,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/banner-.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/banner-2.jpg": {
 		"ft": 16384,
@@ -181,7 +187,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/banner-2.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/banner-3.jpg": {
 		"ft": 16384,
@@ -189,7 +196,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/banner-3.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/banner-4.jpg": {
 		"ft": 16384,
@@ -197,7 +205,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/banner-4.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/banner-attend.jpg": {
 		"ft": 16384,
@@ -205,7 +214,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/banner-attend.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/banner.jpg": {
 		"ft": 16384,
@@ -213,39 +223,48 @@
 		"oA": 0,
 		"oAP": "\/_i\/banner.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/cloud.new.png": {
 		"ft": 32768,
 		"iS": 155465,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/cloud.new.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/cloud.old.png": {
 		"ft": 32768,
 		"iS": 146313,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/cloud.old.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/cloud.png": {
 		"ft": 32768,
 		"iS": 155465,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/cloud.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/facebook.png": {
 		"ft": 32768,
 		"iS": 4051,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/facebook.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/favicon.ico": {
 		"ft": 8192,
@@ -256,58 +275,72 @@
 	"\/_i\/favicon.png": {
 		"ft": 32768,
 		"iS": 2157,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/favicon.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/left-flourish.png": {
 		"ft": 32768,
 		"iS": 21721,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/left-flourish.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/logo-back.png": {
 		"ft": 32768,
 		"iS": 43722,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/logo-back.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/logo-back2.png": {
 		"ft": 32768,
 		"iS": 42334,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/logo-back2.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/logo-old.png": {
 		"ft": 32768,
 		"iS": 22084,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/logo-old.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/logo.png": {
 		"ft": 32768,
 		"iS": 16221,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/logo.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/new_logo.png": {
 		"ft": 32768,
 		"iS": 8172,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/new_logo.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/podcast.jpg": {
 		"ft": 16384,
@@ -315,23 +348,28 @@
 		"oA": 0,
 		"oAP": "\/_i\/podcast.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/right-flourish.png": {
 		"ft": 32768,
 		"iS": 21362,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/right-flourish.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/search.png": {
 		"ft": 32768,
 		"iS": 4739,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/search.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/texture.jpg": {
 		"ft": 16384,
@@ -339,15 +377,18 @@
 		"oA": 0,
 		"oAP": "\/_i\/texture.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/twitter.png": {
 		"ft": 32768,
 		"iS": 8278,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/twitter.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/Untitled-1.jpg": {
 		"ft": 16384,
@@ -355,7 +396,8 @@
 		"oA": 0,
 		"oAP": "\/_i\/Untitled-1.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/vrbc_icon.jpg": {
 		"ft": 16384,
@@ -363,31 +405,47 @@
 		"oA": 0,
 		"oAP": "\/_i\/vrbc_icon.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/vrbc_icon.png": {
 		"ft": 32768,
 		"iS": 14356,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/vrbc_icon.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/vrbc_logo.png": {
 		"ft": 32768,
 		"iS": 99678,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/vrbc_logo.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
+		},
+	"\/_i\/vrbc_logo_icon.jpg": {
+		"ft": 16384,
+		"iS": 10965,
+		"oA": 0,
+		"oAP": "\/_i\/vrbc_logo_icon.jpg",
+		"oF": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/_i\/vrbc_logo_icon.png": {
 		"ft": 32768,
 		"iS": 4702,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/_i\/vrbc_logo_icon.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/_js\/fitvids.js": {
 		"ft": 64,
@@ -1416,10 +1474,12 @@
 	"\/screenshot.png": {
 		"ft": 32768,
 		"iS": 6757,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/screenshot.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/search-event-list.php": {
 		"ft": 8192,
@@ -2380,6 +2440,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-cond-assign": {
 			"active": 1,
 			"optionString": "'except-parens'"
@@ -2577,6 +2641,10 @@
 			"optionString": "{'grouping': false, 'allowCall': false }"
 			},
 		"no-mixed-spaces-and-tabs": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multi-assign": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -2856,6 +2924,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -2907,6 +2979,10 @@
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -3001,6 +3077,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -3447,7 +3527,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -3540,7 +3621,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"enableLossy": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,

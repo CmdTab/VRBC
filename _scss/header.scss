@@ -1,8 +1,8 @@
 .site-header {
-	padding: 3em 0 1em;
+	padding: 6.5em 0 1.5em;
 	@include bp(50) {
 		position: relative;
-		padding: 2em 0 1em;
+		padding: 5em 0 1em;
 		//background: url(_i/cloud.png) bottom left no-repeat;
 	}
 }
@@ -58,6 +58,13 @@
 }
 .contact-group {
 	display: inline-block;
+    /*position: absolute;
+    bottom: -3.15em;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0.5em;
+    background-color: #3d3d35;*/
 }
 .social-icons {
 	display: inline-block;
@@ -260,5 +267,26 @@
 	@include bp(30) {
 		right: 1em;
 		top: 0.25em;
+	}
+}
+.give-btn {
+	position: absolute;
+	top: 3.65em;
+	right: 0;
+	left: 0;
+	text-align: center;
+	background-color: $teal;
+	display: block;
+	width: 100%;
+	padding: 0.75em 1.5em;
+	text-transform: none;
+	@include bp(50) {
+		top: 1.5em;
+		right: 0;
+		left: auto;
+		width: 14em;
+	}
+	&:hover {
+		background-color: darken($teal,5%);
 	}
 }

@@ -13,6 +13,24 @@
 		top: 20%;
 	}
 }
+.service-contact {
+	p {
+		font-size: 0.8em;
+		font-style: italic;
+		text-align: center;
+	}
+	a {
+		color: darken($purple, 10%);
+	}
+}
+.featured-post-banner {
+	background-color: $purple;
+	color: #fff;
+	padding: 1.5em 1em;
+	h2 {
+		margin: 0;
+	}
+}
 .serve-banner {
 	p {
 		position: absolute;

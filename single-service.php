@@ -30,8 +30,8 @@ get_header(); ?>
 <div class="page-container group">
 	<div class="single-event-container group">
 		<div class="service-breadcrumb">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>service">
-				<?php include('svg/icon-left.php'); ?>Back to All Service Dates
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>serve">
+				<?php include('svg/icon-left.php'); ?>Back to All Serve Dates
 			</a>
 		</div>
 

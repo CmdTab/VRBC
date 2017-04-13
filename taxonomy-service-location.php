@@ -51,8 +51,8 @@ get_header(); ?>
 
 			<div id="primary" class="primary event-archive service-event">
 				<div class="service-breadcrumb">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>service">
-						<?php include('svg/icon-left.php'); ?>Back to All Service Dates
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>serve">
+						<?php include('svg/icon-left.php'); ?>Back to All Serve Dates
 					</a>
 				</div>
 				<div class="service-nav">

@@ -17,7 +17,7 @@
 <link rel="icon"
       type="image/png"
       href="<?php bloginfo('template_directory'); ?>/_i/favicon.png">
-<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_i/vrbc_logo_icon.png">
+<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_i/vrbc_logo_icon.jpg">
 
 <?php wp_head(); ?>
 <!--[if lt IE 9]>
@@ -39,6 +39,7 @@
 
 <div id="page" class="hfeed site-wrapper">
 	<header id="masthead" class="site-header group" role="banner">
+		<a href="https://vrbcdfwtx.infellowship.com/UserLogin/Index?ReturnUrl=%2fOnlineGiving" class="btn give-btn">Give to VRBC</a>
 		<img src ="<?php bloginfo('template_directory'); ?>/_i/cloud.png" class="cloud">
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
