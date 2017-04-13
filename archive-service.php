@@ -52,9 +52,9 @@ get_header(); ?>
 					'terms'    => 'featured-post',
 				),
 			),
-			'meta_key'       => 'date_of_event',
+			/*'meta_key'       => 'date_of_event',
 			'orderby'        => 'meta_value',
-			'order'          => 'ASC'
+			'order'          => 'ASC'*/
 		);
 
 		$loop = new WP_Query( $args );
@@ -314,9 +314,9 @@ get_header(); ?>
 			$exclude_arg = array(
 				'post_type'      => 'service',
 				'post__not_in'   => $exclude_post,
-				'meta_key'       => 'date_of_event',
+				/*'meta_key'       => 'date_of_event',
 				'orderby'        => 'meta_value',
-				'order'          => 'ASC',
+				'order'          => 'ASC',*/
 				'paged'          => $currentPage
 			);
 
@@ -327,8 +327,8 @@ get_header(); ?>
 				<ul class="three-list group event-list">
 
 				<?php while ( $service_loop->have_posts() ) : $service_loop->the_post();
-					$event_date = get_field('date_of_event');
-					$event_time = get_field('time_of_event');
+					/*$event_date = get_field('date_of_event');
+					$event_time = get_field('time_of_event');*/
 				?>
 
 					<li id="post-<?php the_ID(); ?>" <?php post_class('event-list-archive'); ?>>
