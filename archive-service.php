@@ -64,7 +64,6 @@ get_header(); ?>
 			while ( $loop->have_posts() ) : $loop->the_post();
 				$i++;
 			endwhile; wp_reset_postdata();
-
 	?>
 
 	<div class="featured-post-banner">
@@ -183,13 +182,13 @@ get_header(); ?>
 			</ul>
 		</div>
 
-		<?php elseif($i == 3) : ?>
+	<?php elseif($i > 3) : ?>
 
 			<div class="three-featured-post group">
 				<ul class="three-list group event-list">
 
-					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
+					<?php $j = 0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<?php if($j < 3): ?>
 						<li id="post-<?php the_ID(); ?>" <?php post_class('event-list-archive'); ?>>
 							<div class="entry-header">
 								<a href="<?php the_permalink(); ?>">
@@ -240,8 +239,8 @@ get_header(); ?>
 								</div>
 							</div><!-- .entry-header -->
 						</li><!-- #post-<?php the_ID(); ?> -->
-
-					<?php $exclude_post[] = get_the_ID(); endwhile; ?>
+						<?php endif; ?>
+					<?php $exclude_post[] = get_the_ID(); $j++; endwhile; ?>
 
 				</ul>
 			</div>
